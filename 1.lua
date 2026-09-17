@@ -503,7 +503,7 @@ end
 -- ============================ BẮT ĐẦU FULL LOGIC MOD ==========================
 -- ==============================================================================
 
-local function Notify(msg) local s = "[FLUXMOD10 VIP New] " .. tostring(msg)
+local function Notify(msg) local s = "[ZULFINUX VIP New] " .. tostring(msg)
 pcall(function() if _G.LexusNotify then _G.LexusNotify(s) end end)
 pcall(function() local sh = import("ScriptHelperClient") if sh and
 sh.AddOnScreenDebugMessage then sh.AddOnScreenDebugMessage(s, -1, 3.0, {R=1,
@@ -986,7 +986,7 @@ local function GetConfigPaths(fileName)
     return paths
 end
 
-local ConfigFileName = "FLUXMOD10_settings.txt"
+local ConfigFileName = "ZULFINUX_settings.txt"
 _G.LastConfigSaveStr = ""
 
 -- HÀM LƯU CONFIG
@@ -1119,7 +1119,7 @@ function _G.InitModMenuTab()
     
     -- 1. TẠO BẢNG ID ẢO VỚI TEXT MỚI (Hỗ trợ 2 ngôn ngữ)
     local FakeTextMap = {
-        [999000] = T(" FLUXMODS2 MENU", "FLUXMODS2 MENU"),
+        [999000] = T(" ZULFINUX MENU", "ZULFINUX MENU"),
         [999001] = T("FEATURE ESP ", "VISUALS (ESP)"),
         [999002] = T("AIMBOT ORIGINAL", "NATIVE AIMBOT & BULLET TRACK"),
         [999003] = T("AIMBOT ROYAL", "AIMBOT ROYAL"),
@@ -1311,7 +1311,7 @@ local StackAimbotV2 = {
      { Key = "ModMenu_SkinAttachment", UI = AliasMap.Switcher, Text = T("Skin Aksesoris Senjata", "Weapon Attachment Skin"), GetFunc = function() return _G.LexusConfig.SkinAttachment end, SetFunc = function(c,v) _G.LexusConfig.SkinAttachment = v return true end },
      { Key = "ModMenu_KillMessage", UI = AliasMap.Switcher, Text = T("Kill Messenger VIP", "VIP Kill Messenger"), GetFunc = function() return _G.LexusConfig.KillMessage end, SetFunc = function(c,v) _G.LexusConfig.KillMessage = v return true end },
      { Key = "ModMenu_KillCountUI", UI = AliasMap.Switcher, Text = T("Penghitung Kill (Tampilkan jumlah Kill)", "Kill Counter UI"), GetFunc = function() return _G.LexusConfig.KillCountUI end, SetFunc = function(c,v) _G.LexusConfig.KillCountUI = v return true end },
-     { Key = "ModMenu_SkinOpenLink", UI = AliasMap.Switcher, Text = T("Panduan Mod Skin Topi/Tas (Link)", "Mod Skin Guide (Link)"), GetFunc = function() return _G.LexusConfig.SkinOpenLink end, SetFunc = function(c,v) _G.LexusConfig.SkinOpenLink = v; if v == true then pcall(function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://t.me/+J7nQdHJyRiQxM2Y1") end end) end return true end },
+     { Key = "ModMenu_SkinOpenLink", UI = AliasMap.Switcher, Text = T("Panduan Mod Skin Topi/Tas (Link)", "Mod Skin Guide (Link)"), GetFunc = function() return _G.LexusConfig.SkinOpenLink end, SetFunc = function(c,v) _G.LexusConfig.SkinOpenLink = v; if v == true then pcall(function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://t.me/+OkliZkp3gnUyNGE1") end end) end return true end },
  }
 
 local StackCombat = {
@@ -1452,11 +1452,11 @@ local function ShowLexusVIPMenu()
             local title = _G.LexusLang == "EN" and "SCAM ALERT" or "PERINGATAN PENIPUAN MOD"
             local content = _G.LexusLang == "EN" 
                 and "Join my Telegram to avoid scammers selling free mods.  TELE @ZFG6969" 
-                or "Bergabunglah dengan Telegram Saya untuk Menghindari Oknum Penjual Mod VIP TELE @ZFG6969\nChanel telegram resmi FLUXMODS2 jika ada yg jual mod ini kecuali owner berarti scam"
+                or "Bergabunglah dengan Telegram Saya untuk Menghindari Oknum Penjual Mod VIP TELE @ZFG6969\nChanel telegram resmi ZULFINUX jika ada yg jual mod ini kecuali owner berarti scam"
             local btn1 = _G.LexusLang == "EN" and "JOIN" or "GABUNG"
             local btn2 = _G.LexusLang == "EN" and "CLOSE" or "TUTUP"
 
-            Msg.Show(1, title, content, function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://t.me/+J7nQdHJyRiQxM2Y1") end end, function() end, btn1, btn2)
+            Msg.Show(1, title, content, function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://t.me/+OkliZkp3gnUyNGE1") end end, function() end, btn1, btn2)
             _G.LexusState.MenuStep = 99
             _G.LexusMenuAlreadyShown = true
         end
@@ -1499,7 +1499,7 @@ local function ShowLexusVIPMenu()
             local legal_content = "GULIR KE BAWAH UNTUK MEMBACA LENGKAP - SCROLL DOWN TO READ THE FULL ARTICLE\n\nESP V2  = Crash di Beberapa Perangkat ( Game crashes on some devices )\nMAGIC BULLET = RISK BAN X\nGLOBAL = AMAN ✓( SAFE )\nVNG = AMAN ✓( SAFE )\nKOREA = AMAN ✓(SAFE)\nTAIWAN = AMAN ✓( SAFE )\n\nIND Halo Semua, Ini Mod Buatan Saya. Harap Hati-hati Jangan Bertransaksi Jual Beli dengan Siapa Pun Selain Saya Telegram @ZFG6969 . Jika Ada Orang Lain Yang Bertransaksi Dengan Anda Mengenai Mod Ini, Selamat Anda Tertipu HaHaHa. Jika Anda Di Channel Telegram Saya, Mohon Baca Panduan Fitur-Fiturnya, Jangan Tanyakan Hal-Hal Yang Membuktikan Kebodohan Anda\n\nENGLISH Hi everyone, this is a mod I created. Please be careful and do not conduct any transactions with anyone other than me (Telegram: @ZFG6969 ). If anyone else tries to trade these mods with you—congratulations, you've been scammed!."
             local legal_btnOK = "Setuju (Agree)"
             local legal_btnCancel = "Batal (Cancel)"
-            local legal_url = "https://t.me/+J7nQdHJyRiQxM2Y1" 
+            local legal_url = "https://t.me/+OkliZkp3gnUyNGE1" 
 
             local legal_msg = require("client.slua.logic.common.logic_common_legal_msg")
             if not legal_msg then
@@ -8323,7 +8323,7 @@ local function ExpiredTick()
                 Msg.Show(1, "MOD TELAH KADALUWARSA", "VERSI MOD ANDA TELAH KADALUWARSA!\nSILAKAN HUBUNGI ADMIN UNTUK PERPANJANG.\nInbox Tele @ZFG6969 Untuk Membeli, Jika Ada Orang Lain Yang Menjual Ini Kepada Anda Selain Saya, Selamat Anda Telah Tertipu", 
                 function() 
                     local Web = require("client.slua.logic.url.logic_webview_sdk")
-                    if Web and Web.OpenURL then Web:OpenURL("https://t.me/+J7nQdHJyRiQxM2Y1") end 
+                    if Web and Web.OpenURL then Web:OpenURL("https://t.me/+OkliZkp3gnUyNGE1") end 
                 end, 
                 function() end, "HUBUNGI ADMIN", "TUTUP")
                 _G.LexusNotifiedPopup = true 
@@ -14215,7 +14215,7 @@ local function GetOutfitConfigPaths(fileName)
     return paths
 end
 
-local CONFIG_PATHS = GetOutfitConfigPaths("FLUXMOD10_outfit.json")
+local CONFIG_PATHS = GetOutfitConfigPaths("ZULFINUX_outfit.json")
 
 local PERSIST_SLOTS = {
     { "outfit", "outfitRes", "outfitIns", "AddOutfitLastLobbyOutfitRes" },
@@ -20360,12 +20360,12 @@ local AutoFeedback = {
 }
 
 local function Log(message)
-	print(string.format("[FLUXMOD_PUBG] [%s] %s", os.date("%H:%M:%S"), tostring(message)))
+	print(string.format("[ZULFINUX] [%s] %s", os.date("%H:%M:%S"), tostring(message)))
 end
 
 local function Notify(message)
 	if _G.FLUXMODNotify then
-		pcall(_G.FLUXMODNotify, message)
+		pcall(_G.ZFGNotify, message)
 	end
 end
 
@@ -20501,7 +20501,7 @@ local E_CHAT  = string.char(240,159,146,172) -- 💬
 local E_CHECK = string.char(226,156,133)     -- ✅
 
 local FeedbackCaptionTemplate =
-E_CROWN .. " <b>FLUXMOD FREE</b> " .. E_CROWN .. "\n" ..
+E_CROWN .. " <b>ZULFINUX</b> " .. E_CROWN .. "\n" ..
 "━━━━━━━━━━━━━━━━━━━━\n" ..
 E_FIRE .. " <b>AUTO FEEDBACK FREE</b>\n" ..
 "━━━━━━━━━━━━━━━━━━━━\n" ..
@@ -20566,7 +20566,7 @@ function AutoFeedback.SendFeedback(path, kills, rank, segment)
 				encodedImage = encodedImage:gsub("/", "%%2F")
 				encodedImage = encodedImage:gsub("=", "%%3D")
 
-				Notify("[FLUXMOD_PUBG] Đang đẩy ảnh Top 1 về Server VIP...")
+				Notify("[ZULFINUX] Đang đẩy ảnh Top 1 về Server VIP...")
 				local body = "base64_image=" .. encodedImage
 					.. "&caption=" .. UrlEncode(caption)
 
@@ -20577,10 +20577,10 @@ function AutoFeedback.SendFeedback(path, kills, rank, segment)
 					nil,
 					function(success, _, response, errorMessage)
 						if success and response and tostring(response):find('"status":%s*true') then
-							Notify("[FLUXMOD_PUBG] Gửi thành công! (Kills: " .. tostring(kills) .. ")")
+							Notify("[ZULFINUX] Gửi thành công! (Kills: " .. tostring(kills) .. ")")
 						else
 							local detail = tostring(response or errorMessage):sub(1, 40)
-							Notify("[FLUXMOD_PUBG] Lỗi Server VIP: " .. detail)
+							Notify("[ZULFINUX] Lỗi Server VIP: " .. detail)
 						end
 						RemoveFile(path)
 					end,
@@ -20594,7 +20594,7 @@ function AutoFeedback.SendFeedback(path, kills, rank, segment)
 				return
 			end
 
-			Notify("[FLUXMOD_PUBG] Chụp ảnh thất bại!!")
+			Notify("[ZULFINUX] Chụp ảnh thất bại!!")
 			RemoveFile(path)
 		end
 
@@ -20820,14 +20820,14 @@ local function CaptureAndSend(kills, rank, segment, restoreHud)
 					if #ReadFile(path) > 0 then
 						AutoFeedback.SendFeedback(path, kills, rank, segment)
 					else
-						Notify("[FLUXMOD_PUBG] Lỗi đọc ảnh iOS!")
+						Notify("[ZULFINUX] Lỗi đọc ảnh iOS!")
 					end
 				end)
 			elseif attempts < 15 then
 				ticker.AddTimerOnce(1, CheckCapture)
 			else
 				RestoreHudOnce()
-				Notify("[FLUXMOD_PUBG] Chụp ảnh thất bại!")
+				Notify("[ZULFINUX] Chụp ảnh thất bại!")
 			end
 		end
 
@@ -20848,7 +20848,7 @@ end
 		return
 	end
 
-	Notify("[FLUXMOD_PUBG] Chúc mừng TUẤT đã TOP 1...")
+	Notify("[ZULFINUX] Chúc mừng TUẤT đã TOP 1...")
 	local setHudHidden = CreateHudController()
 	setHudHidden(true)
 
