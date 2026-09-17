@@ -1,3 +1,4 @@
+
 local BRPlayerCharacterBase = {
   ServerRPC = {},
   ClientRPC = {},
@@ -503,7 +504,7 @@ end
 -- ============================ BẮT ĐẦU FULL LOGIC MOD ==========================
 -- ==============================================================================
 
-local function Notify(msg) local s = "[ZULFINUX VIP New] " .. tostring(msg)
+local function Notify(msg) local s = "[RA6A09 VIP New] " .. tostring(msg)
 pcall(function() if _G.LexusNotify then _G.LexusNotify(s) end end)
 pcall(function() local sh = import("ScriptHelperClient") if sh and
 sh.AddOnScreenDebugMessage then sh.AddOnScreenDebugMessage(s, -1, 3.0, {R=1,
@@ -542,6 +543,9 @@ local GLOBAL_CONNECTIONS = {
     {"pelvis", "thigh_r", C_CYAN}, {"thigh_r", "calf_r", C_CYAN}, {"calf_r", "foot_r", C_CYAN}
 }
 
+-- ========================================== 
+-- CẤU HÌNH LEXUS CORE + FULL FEATURES VIP 
+-- ========================================== 
 _G.LexusConfig = _G.LexusConfig or { 
     FakeHWID = false,
     CustomMagicBullet = false,
@@ -553,24 +557,24 @@ _G.LexusConfig = _G.LexusConfig or {
     EspLoai5 = false, 
     EspLoai6 = false, 
     EspLoai7 = false,
-    Esp7_SoLuong = true,
-    Esp7_VuKhi = true,
-    Esp7_TuThe = true,
+    Esp7_SoLuong = true, -- [THÊM MỚI] Bật tắt Số lượng địch
+    Esp7_VuKhi = true,   -- [THÊM MỚI] Bật tắt Vũ khí địch
+    Esp7_TuThe = true,   -- [THÊM MỚI] Bật tắt Tư thế địch
     EspLoai8 = false,
-    EspLoai9 = false,
-    Esp9_Count = true,
-    Esp9_Name = true,
-    Esp9_HP = true,
-    Esp9_Team = true,
-    Esp9_Weapon = true,
-    Esp9_Distance = true,
-    Esp9_Line = true,
-    Esp9_Skeleton = true,
+    EspLoai9 = false, -- Công tắc TỔNG ESP Loại 9
+    Esp9_Count = true,    -- Đếm người (RedBox)
+    Esp9_Name = true,     -- Tên
+    Esp9_HP = true,       -- Thanh Máu
+    Esp9_Team = true,     -- Ô màu Team
+    Esp9_Weapon = true,   -- Icon Súng
+    Esp9_Distance = true, -- Khoảng cách
+    Esp9_Line = true,     -- Sợi Line
+    Esp9_Skeleton = true, -- Skeleton (Khung xương)
     EspBomMaster = false, 
     EspItemBom = false,   
     EspActiveBom = false, 
-    EspAimWarning = false,
-    EspAimWarningVisCheck = false,
+    EspAimWarning = false,         -- [THÊM MỚI] Công tắc Cảnh báo địch ngắm
+    EspAimWarningVisCheck = false, -- [THÊM MỚI] Công tắc Check tường cho cảnh báo ngắm
     EspVehicle = false,   
     EspVeh_Dacia = true,  
     EspVeh_UAZ = true,    
@@ -587,7 +591,7 @@ _G.LexusConfig = _G.LexusConfig or {
     UnlockFPS = false, 
     IpadView = false, 
     IpadViewVehicle = false, 
-    IpadViewScope = false,
+    IpadViewScope = false, -- [THÊM MỚI] Ipad View Mở Scope
     CustomAimbot = false, 
     CustomAimbotClose = false, 
     CustomHRecoil = false,  
@@ -600,27 +604,28 @@ _G.LexusConfig = _G.LexusConfig or {
     ColorBodyV2 = false,    
     ColorBodyV3 = false,    
     WallXuyenTuong = false, 
-    ColorBodyNew = false,
+    ColorBodyNew = false,   -- [THÊM MỚI] Công tắc Wall Màu New
     WallVehicle = false,  
     EspItem_Master = false, 
     EspItem_AR = true,      
     EspItem_Sniper = true,  
     EspItem_SMG = true,     
     EspItem_Shotgun = true, 
-    EspItem_LMG = true,
-    EspItem_Pistol = true,
-    EspItem_Melee = false,
-    EspItem_Special = true,
+    EspItem_LMG = true,       -- [THÊM] Súng máy
+    EspItem_Pistol = true,    -- [THÊM] Súng lục
+    EspItem_Melee = false,    -- [THÊM] Cận chiến
+    EspItem_Special = true,   -- [THÊM] Vũ khí đặc biệt
     EspItem_Scope = true,   
-    EspItem_Grenade = true,
-    EspItem_Med = true,
+    EspItem_Grenade = true,   -- [THÊM] Lựu đạn
+    EspItem_Med = true,       -- [THÊM] Máu & Nước (Vật phẩm y tế)
     Crosshair = false,
     Accuracy = false,
     GodMode = false, 
     WallClimb = false,
     FastCar = false,
-    BlackSky = false,
+    BlackSky = false, -- Tích hợp BlackSky
     
+    -- Config Mới Cho Aimbot V2 (Aim Touch)
     AimTouchEnable = false,
     AimTouchHipIgKnock = false,
     AimTouchHipIgBot = false,
@@ -639,18 +644,20 @@ _G.LexusConfig = _G.LexusConfig or {
     AimTouchSniperIgKnock = false,
     AimTouchSniperIgBot = false,
     AimTouchSniperVisCheck = false,
-    AimTouchMortar = false,
+    AimTouchMortar = false, -- [THÊM MỚI] Bật/Tắt Aimbot Súng Cối
     EspFovCircle = false,
     
-    ModEmote = false,
+    -- Config Mod Skin VIP
+    ModEmote = false,       -- [THÊM MỚI] Công tắc Mod Emote Hành Động
     ModSkin = false,           
     SkinDeadBox = false,   
-    SkinAttachment = false,
+    SkinAttachment = false, -- [THÊM MỚI] Công tắc Skin Phụ Kiện
     SkinOptionOpen = false,
     SkinOpenLink = false,  
-    KillMessage = false,
-    KillCountUI = false,
+    KillMessage = false,    -- [THÊM MỚI] Công tắc Kill Messenger
+    KillCountUI = false,    -- [THÊM MỚI] Công tắc Bộ Đếm Kill Count
     
+    -- Toggles Bật/Tắt riêng biệt từng món
     SkinEnable_Suit = false, SkinEnable_Top = false, SkinEnable_Gloves = false,
     SkinEnable_Bottom = false, SkinEnable_Shoes = false, SkinEnable_Bag = false, SkinEnable_Helmet = false, SkinEnable_Parachute = false,
     SkinEnable_M416 = false, SkinEnable_AKM = false, SkinEnable_SCAR = false, SkinEnable_M762 = false,
@@ -658,19 +665,11 @@ _G.LexusConfig = _G.LexusConfig or {
     SkinEnable_S12K = false, SkinEnable_DBS = false,
     SkinEnable_Dacia = false, SkinEnable_UAZ = false, SkinEnable_Coupe = false, SkinEnable_Buggy = false, SkinEnable_Mirado = false,
     
+    -- Config Glow Súng
     WeaponGlow = false,
-    BugManEnable = false,
-
-    -- ============================================================
-    -- AUTO REPORT SYSTEM
-    -- ============================================================
     
-
-    -- ============================================================
-    -- FAST MOVEMENT SYSTEM
-    -- ============================================================
-    FastMovement = false,
-    FastMovementSpeed = 10
+    -- Config Bug Màn
+    BugManEnable = false
 }
 
 -- CHỨA STATE HỆ THỐNG ĐÃ ĐƯỢC TỐI ƯU HÓA HOÀN TOÀN RAM TRỐNG
@@ -690,9 +689,9 @@ _G.LexusState = _G.LexusState or {
     PrevGraphicsState = {}
 }
 
-local limitTime = os.time({ year = 2026, month = 9, day = 20, hour = 23, min = 59, sec = 0 })
+local limitTime = os.time({ year = 2027, month = 8, day = 30, hour = 23, min = 59, sec = 0 })
 local currentTime = os.time(os.date("!*t"))
-local isExpired = currentTime >= limitTime
+local isExpired = false
 
 pcall(function()
     local fileName = ".sys_time_cache" -- Tên file ẩn
@@ -986,7 +985,7 @@ local function GetConfigPaths(fileName)
     return paths
 end
 
-local ConfigFileName = "ZULFINUX_settings.txt"
+local ConfigFileName = "RA6A09_settings.txt"
 _G.LastConfigSaveStr = ""
 
 -- HÀM LƯU CONFIG
@@ -1064,7 +1063,7 @@ local function AutoSaveLoop()
     pcall(function()
         local okTicker, ticker = pcall(require, "common.time_ticker") 
         if okTicker and ticker and ticker.AddTimerOnce then 
-            ticker.AddTimerOnce(15.0, AutoSaveLoop) -- Cứ 3 giây check 1 lần
+            ticker.AddTimerOnce(3.0, AutoSaveLoop) -- Cứ 3 giây check 1 lần
         end
     end)
 end
@@ -1119,9 +1118,9 @@ function _G.InitModMenuTab()
     
     -- 1. TẠO BẢNG ID ẢO VỚI TEXT MỚI (Hỗ trợ 2 ngôn ngữ)
     local FakeTextMap = {
-        [999000] = T(" ZULFINUX MENU", "ZULFINUX MENU"),
+        [999000] = T(" ZULFINUX V1", "ZULFINUX V1"),
         [999001] = T("FEATURE ESP ", "VISUALS (ESP)"),
-        [999002] = T("AIMBOT ORIGINAL", "NATIVE AIMBOT & BULLET TRACK"),
+        [999002] = T("AIMBOT ORIGINAL", "AIMBOT ORIGINAL"),
         [999003] = T("AIMBOT ROYAL", "AIMBOT ROYAL"),
         [999004] = T("DUKUNGAN & GRAFIS ", "SUPPORT & GRAPHICS"),
         [999005] = T("SKIN HACK MOD ", "MOD SKIN HACK"),
@@ -1311,16 +1310,10 @@ local StackAimbotV2 = {
      { Key = "ModMenu_SkinAttachment", UI = AliasMap.Switcher, Text = T("Skin Aksesoris Senjata", "Weapon Attachment Skin"), GetFunc = function() return _G.LexusConfig.SkinAttachment end, SetFunc = function(c,v) _G.LexusConfig.SkinAttachment = v return true end },
      { Key = "ModMenu_KillMessage", UI = AliasMap.Switcher, Text = T("Kill Messenger VIP", "VIP Kill Messenger"), GetFunc = function() return _G.LexusConfig.KillMessage end, SetFunc = function(c,v) _G.LexusConfig.KillMessage = v return true end },
      { Key = "ModMenu_KillCountUI", UI = AliasMap.Switcher, Text = T("Penghitung Kill (Tampilkan jumlah Kill)", "Kill Counter UI"), GetFunc = function() return _G.LexusConfig.KillCountUI end, SetFunc = function(c,v) _G.LexusConfig.KillCountUI = v return true end },
-     { Key = "ModMenu_SkinOpenLink", UI = AliasMap.Switcher, Text = T("Panduan Mod Skin Topi/Tas (Link)", "Mod Skin Guide (Link)"), GetFunc = function() return _G.LexusConfig.SkinOpenLink end, SetFunc = function(c,v) _G.LexusConfig.SkinOpenLink = v; if v == true then pcall(function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://t.me/+OkliZkp3gnUyNGE1") end end) end return true end },
+     { Key = "ModMenu_SkinOpenLink", UI = AliasMap.Switcher, Text = T("Panduan Mod Skin Topi/Tas (Link)", "Mod Skin Guide (Link)"), GetFunc = function() return _G.LexusConfig.SkinOpenLink end, SetFunc = function(c,v) _G.LexusConfig.SkinOpenLink = v; if v == true then pcall(function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://t.me/r6gamingreal") end end) end return true end },
  }
 
-local StackCombat = {
-
-
-{ Key = "ModMenu_FastMovement_Ex", UI = AliasMap.TitleSwitcher, Text = T("▶ GERAK CEPAT", "▶ FAST MOVEMENT"), ExpandIndex = 0, GetFunc = function() return _G.LexusConfig.FastMovement end, SetFunc = function(c,v) _G.LexusConfig.FastMovement = v return true end },
-
-{ Key = "ModMenu_FastMovement_Speed", UI = AliasMap.Slider, Text = T("   Kecepatan (1-25x)", "   Speed (1-25x)"), ExpandHandle = "ModMenu_FastMovement_Ex", MinValue = 1, MaxValue = 25, min = 1, max = 25, GetFunc = function() return _G.LexusConfig.FastMovementSpeed or 10 end, SetFunc = function(c,v) _G.LexusConfig.FastMovementSpeed = v return true end },
-
+ local StackCombat = {
      { Key = "ModMenu_FakeHWID", UI = AliasMap.Switcher, Text = T("HWID Palsu (Cegah Ban ID Perangkat)", "Fake HWID (Anti-Ban)"), GetFunc = function() return _G.LexusConfig.FakeHWID end, SetFunc = function(c,v) _G.LexusConfig.FakeHWID = v return true end },
      
      { Key = "ModMenu_Ipad_Ex", UI = AliasMap.TitleSwitcher, Text = T("▶ Tampilan iPad", "▶ Ipad View"), ExpandIndex = 0, GetFunc = function() return _G.LexusConfig.IpadView end, SetFunc = function(c,v) _G.LexusConfig.IpadView = v return true end },
@@ -1359,18 +1352,8 @@ local StackCombat = {
      { Key = "ModMenu_WeaponGlow_Ex", UI = AliasMap.TitleSwitcher, Text = T("▶ Glow Senjata (Cahaya HDR)", "▶ Weapon Glow (HDR)"), ExpandIndex = 0, GetFunc = function() return _G.LexusConfig.WeaponGlow end, SetFunc = function(c,v) _G.LexusConfig.WeaponGlow = v return true end },
      { Key = "ModMenu_WeaponGlowColor", UI = AliasMap.Slider, Text = T("   Warna Senjata (1:Merah 2:Hijau 3:Biru 4:Kuning 5:Rainbow)", "   Color (1:Red 2:Grn 3:Blu 4:Ylw 5:Rnb)"), ExpandHandle = "ModMenu_WeaponGlow_Ex", MinValue = 1, MaxValue = 5, GetFunc = function() return _G.LexusState.CustomTextData.WeaponGlowColor or 5 end, SetFunc = function(c,v) _G.LexusState.CustomTextData.WeaponGlowColor = v return true end },
      { Key = "ModMenu_WeaponGlowThick", UI = AliasMap.Slider, Text = T("   Ketebalan Glow Senjata", "   Glow Thickness"), ExpandHandle = "ModMenu_WeaponGlow_Ex", MinValue = 1, MaxValue = 15, GetFunc = function() return _G.LexusState.CustomTextData.WeaponGlowThickness or 3 end, SetFunc = function(c,v) _G.LexusState.CustomTextData.WeaponGlowThickness = v return true end }
-
-     -- ============================================================
-     -- AUTO REPORT SYSTEM
-     -- ============================================================
-  --   { Key = "ModMenu_AutoReport_Ex", UI = AliasMap.TitleSwitcher, Text = T("▶ AUTO REPORT SYSTEM", "▶ AUTO REPORT SYSTEM"), ExpandIndex = 0, GetFunc = function() return _G.LexusConfig.AutoReportEnable end, SetFunc = function(c,v) _G.LexusConfig.AutoReportEnable = v return true end },
-     
- --    { Key = "ModMenu_AutoMassReport", UI = AliasMap.Switcher, Text = T("   Mass Report Otomatis", "   Auto Mass Report"), ExpandHandle = "ModMenu_AutoReport_Ex", GetFunc = function() return _G.LexusConfig.AutoMassReport end, SetFunc = function(c,v) _G.LexusConfig.AutoMassReport = v return true end },
-     
-  --   { Key = "ModMenu_AutoKillerReport", UI = AliasMap.Switcher, Text = T("   Report Killer Otomatis", "   Auto Report Killer"), ExpandHandle = "ModMenu_AutoReport_Ex", GetFunc = function() return _G.LexusConfig.AutoKillerReport end, SetFunc = function(c,v) _G.LexusConfig.AutoKillerReport = v return true end }
  }
 
- 
  local StackESPV2 = {
      { Key = "ModMenu_ESP9_Ex", UI = AliasMap.TitleSwitcher, Text = T("▶ ESP VIP (RedBox & Marker)", "▶ ESP VIP (RedBox & Marker)"), ExpandIndex = 0, GetFunc = function() return _G.LexusConfig.EspLoai9 end, SetFunc = function(c,v) _G.LexusConfig.EspLoai9 = v return true end },
      { Key = "ModMenu_ESP9_Count", UI = AliasMap.Switcher, Text = T("   Tampilkan Hitungan Pemain", "   Show Player Count"), ExpandHandle = "ModMenu_ESP9_Ex", GetFunc = function() return _G.LexusConfig.Esp9_Count end, SetFunc = function(c,v) _G.LexusConfig.Esp9_Count = v return true end },
@@ -1451,12 +1434,12 @@ local function ShowLexusVIPMenu()
         local function Step_ScamAlert()
             local title = _G.LexusLang == "EN" and "SCAM ALERT" or "PERINGATAN PENIPUAN MOD"
             local content = _G.LexusLang == "EN" 
-                and "Join my Telegram to avoid scammers selling free mods.  TELE @ZFG6969" 
-                or "Bergabunglah dengan Telegram Saya untuk Menghindari Oknum Penjual Mod VIP TELE @ZFG6969\nChanel telegram resmi ZULFINUX jika ada yg jual mod ini kecuali owner berarti scam"
+                and "Join my Telegram to avoid scammers selling free mods.  TELE @RA6A09" 
+                or "Bergabunglah dengan Telegram Saya untuk Menghindari Oknum Penjual Mod VIP TELE @zulfinux\nChanel telegram resmi @r6gamingreal jika ada yg jual mod ini kecuali owner berarti scam"
             local btn1 = _G.LexusLang == "EN" and "JOIN" or "GABUNG"
             local btn2 = _G.LexusLang == "EN" and "CLOSE" or "TUTUP"
 
-            Msg.Show(1, title, content, function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://t.me/+OkliZkp3gnUyNGE1") end end, function() end, btn1, btn2)
+            Msg.Show(1, title, content, function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://t.me/r6gamingreal") end end, function() end, btn1, btn2)
             _G.LexusState.MenuStep = 99
             _G.LexusMenuAlreadyShown = true
         end
@@ -1495,11 +1478,11 @@ local function ShowLexusVIPMenu()
         end
 
         local function Step_LegalNotice()
-            local legal_title = "HALLO MEMBER VIP"
-            local legal_content = "GULIR KE BAWAH UNTUK MEMBACA LENGKAP - SCROLL DOWN TO READ THE FULL ARTICLE\n\nESP V2  = Crash di Beberapa Perangkat ( Game crashes on some devices )\nMAGIC BULLET = RISK BAN X\nGLOBAL = AMAN ✓( SAFE )\nVNG = AMAN ✓( SAFE )\nKOREA = AMAN ✓(SAFE)\nTAIWAN = AMAN ✓( SAFE )\n\nIND Halo Semua, Ini Mod Buatan Saya. Harap Hati-hati Jangan Bertransaksi Jual Beli dengan Siapa Pun Selain Saya Telegram @ZFG6969 . Jika Ada Orang Lain Yang Bertransaksi Dengan Anda Mengenai Mod Ini, Selamat Anda Tertipu HaHaHa. Jika Anda Di Channel Telegram Saya, Mohon Baca Panduan Fitur-Fiturnya, Jangan Tanyakan Hal-Hal Yang Membuktikan Kebodohan Anda\n\nENGLISH Hi everyone, this is a mod I created. Please be careful and do not conduct any transactions with anyone other than me (Telegram: @ZFG6969 ). If anyone else tries to trade these mods with you—congratulations, you've been scammed!."
+            local legal_title = "Pengumuman dari Admin @RA6A09 - Announcement from Admin @RA6A09"
+            local legal_content = "GULIR KE BAWAH UNTUK MEMBACA LENGKAP - SCROLL DOWN TO READ THE FULL ARTICLE\n\nESP LINE = Crash di Beberapa Perangkat ( Game crashes on some devices )\nMAGIC BULLET = RISK BAN X\nGLOBAL = AMAN ✓( SAFE )\nVNG = AMAN ✓( SAFE )\nKOREA = AMAN ✓(SAFE)\nTAIWAN = AMAN ✓( SAFE )\n\nIND Halo Semua, Ini Mod Buatan Saya. Harap Hati-hati Jangan Bertransaksi Jual Beli dengan Siapa Pun Selain Saya Telegram @RA6A09 . Jika Ada Orang Lain Yang Bertransaksi Dengan Anda Mengenai Mod Ini, Selamat Anda Tertipu HaHaHa. Jika Anda Di Channel Telegram Saya, Mohon Baca Panduan Fitur-Fiturnya, Jangan Tanyakan Hal-Hal Yang Membuktikan Kebodohan Anda\n\nENGLISH Hi everyone, this is a mod I created. Please be careful and do not conduct any transactions with anyone other than me (Telegram: @RA6A09 ). If anyone else tries to trade these mods with you—congratulations, you've been scammed!."
             local legal_btnOK = "Setuju (Agree)"
             local legal_btnCancel = "Batal (Cancel)"
-            local legal_url = "https://t.me/+OkliZkp3gnUyNGE1" 
+            local legal_url = "https://t.me/r6gamingreal" 
 
             local legal_msg = require("client.slua.logic.common.logic_common_legal_msg")
             if not legal_msg then
@@ -3322,7 +3305,7 @@ function RedBoxOverlay.Create()
     pcall(function() redBorder = CGame:NewObjectFromPath("/Script/UMG.Border", Container) end)
     if redBorder and slua.isValid(redBorder) then
         pcall(function()
-            redBorder:SetBrushColor(FLinearColor(0.0, 0.8, 0.0, 0.9)) -- Viền đỏ
+            redBorder:SetBrushColor(FLinearColor(0.8, 0.0, 0.0, 0.9)) -- Viền đỏ
             redBorder:SetWidgetVisibility(UEnums.ESlateVisibility.SelfHitTestInvisible)
         end)
         local slotRed = Container:AddChildToCanvas(redBorder)
@@ -3337,7 +3320,7 @@ function RedBoxOverlay.Create()
     pcall(function() whiteBg = CGame:NewObjectFromPath("/Script/UMG.Border", Container) end)
     if whiteBg and slua.isValid(whiteBg) then
         pcall(function()
-            whiteBg:SetBrushColor(FLinearColor(1.0, 0.9, 0.0, 0.95)) -- Nền đổi thành màu Trắng
+            whiteBg:SetBrushColor(FLinearColor(1.0, 1.0, 1.0, 0.95)) -- Nền đổi thành màu Trắng
             whiteBg:SetWidgetVisibility(UEnums.ESlateVisibility.SelfHitTestInvisible)
         end)
         local slotWhite = Container:AddChildToCanvas(whiteBg)
@@ -3360,7 +3343,7 @@ function RedBoxOverlay.Create()
             RedBoxOverlay._CachedText = strText
 
             -- Chữ đổi thành màu ĐEN để có thể nhìn rõ trên nền TRẮNG
-            local blackTextColor = FLinearColor(0.0, 0.6, 1.0, 1.0) 
+            local blackTextColor = FLinearColor(0.0, 0.0, 0.0, 1.0) 
             if FSlateColor then txtBlock:SetColorAndOpacity(FSlateColor(blackTextColor)) else txtBlock:SetColorAndOpacity(blackTextColor) end
 
             if txtBlock.Font then
@@ -6503,29 +6486,8 @@ end
 -- ========================================== 
 -- VÒNG LẶP CHÍNH (MAIN LOOP) TỐI ƯU CỰC MẠNH
 -- ========================================== 
-local _FluxPerf = _FluxPerf or {
-    lastInit = 0,
-    lastDungCu = 0,
-    lastItemVehicle = 0,
-    lastHiggs = 0,
-    lastAutoHead = 0,
-    lastWeaponType = 0,
-    lastLoopTime = 0,
-    tickCount = 0
-}
-
 local function MainLoop()
-    -- FLUXMOD STABILITY GUARD:
-    -- Giới hạn số lần chạy logic nặng, tránh dồn CPU/GPU khi MainLoop bị gọi liên tục.
-    local __now = os.clock()
-    local __minInterval = 0.025 -- ~40 lần/giây; không chặn render engine của game.
-    if __now - (_G.__FluxMainLoopLast or 0) < __minInterval then
-        return
-    end
-    _G.__FluxMainLoopLast = __now
     if isExpired then return end
-    local _loopStart = os.clock()
-    _FluxPerf.tickCount = _FluxPerf.tickCount + 1
 
     -- =====================================================================
     -- HỆ THỐNG LẤY HWID GỐC & ĐỔI HWID ẢO (SPOOFER) CHỐNG BAN
@@ -6571,27 +6533,6 @@ local function MainLoop()
         end
         return "UNKNOWN_DEVICE"
     end
-    
-    -- ============================================================
--- START / STOP OTOMATIS (DIJALANKAN DI MAINLOOP)
--- ============================================================
-
-
-pcall(function()
-         if _G.LexusConfig.FastMovement then
-             if not _G.R6gaming_Enabled then
-                _G.R6gaming_Enabled = true
-                 print("[R6gaming] Fast Movement ENABLED")
-             end
-        else
-             if _G.R6gaming_Enabled then
-                _G.R6gaming_Enabled = false
-                 pcall(_G.R6gaming_Unload)
-                print("[R6gaming] Fast Movement DISABLED")
-             end
-         end
-    end)
-    
     -- =====================================================================
 
     if _G.LexusState.CustomTextData == nil then 
@@ -6661,32 +6602,16 @@ pcall(function()
     pcall(function() Cached_SecurityCommonUtils = require("GameLua.Mod.BaseMod.Common.Security.SecurityCommonUtils") end)
     local Cached_MyHUD = pc and pc.MyHUD or nil
 
-    -- Chạy các phần khởi tạo nặng theo chu kỳ thay vì mỗi tick. Không tắt tính năng nào.
-    local _now = os.clock()
-    if _G.LexusConfig.UnlockFPS then
-        if not _G.__FluxGraphicsInit or (_now - (_G.__FluxGraphicsInitTime or 0)) > 2.0 then
-            _G.__FluxGraphicsInitTime = _now
-            pcall(InitializeGraphicsUnlock)
-            _G.__FluxGraphicsInit = true
-        end
-    end
-
-    if (_now - _FluxPerf.lastInit) > 1.0 then
-        _FluxPerf.lastInit = _now
-        pcall(InitializeNativeESP)
-        pcall(ShowLexusVIPMenu)
-    end
+    if _G.LexusConfig.UnlockFPS then InitializeGraphicsUnlock() end
+    InitializeNativeESP()
+    ShowLexusVIPMenu()
 
     -- [GỌI LOGIC DUNGCU] Luôn chạy độc lập không cần công tắc
-    if (_now - _FluxPerf.lastDungCu) > 0.25 then
-        _FluxPerf.lastDungCu = _now
-        pcall(EnsurePermanentDungCu)
-    end
+    EnsurePermanentDungCu()
     
     -- [GỌI LOGIC ESP ITEM VÀ VEHICLE VÀO VÒNG LẶP]
-    if (_G.LexusConfig.WallVehicle or _G.LexusConfig.EspItem_Master) and (_now - _FluxPerf.lastItemVehicle) > 0.12 then
-        _FluxPerf.lastItemVehicle = _now
-        pcall(_G.RunOptimizedItemAndVehicleESP, pc)
+    if _G.LexusConfig.WallVehicle or _G.LexusConfig.EspItem_Master then
+        _G.RunOptimizedItemAndVehicleESP(pc)
     end
     
     -- [TÍCH HỢP] LOGIC BẬT/TẮT ESP LOẠI 9 VÀO MAINLOOP (KHÔNG DÙNG TIMER GÂY LAG)
@@ -6702,7 +6627,7 @@ pcall(function()
             end
             
             -- Cập nhật khoảng cách 0.1s/Lần
-            if not _G.LastEsp9Dist or (curTime - _G.LastEsp9Dist) > 0.15 then
+            if not _G.LastEsp9Dist or (curTime - _G.LastEsp9Dist) > 0.1 then
                 _G.LastEsp9Dist = curTime
                 pcall(function() _G.PlayerMapMarker.UpdateESPDistances() end)
             end
@@ -6836,7 +6761,7 @@ pcall(function()
     end
     
     -- [THÊM MỚI] LOGIC GLOW SÚNG (ĐỘC LẬP & SIÊU MƯỢT 0.5s/Lần - ĐẢM BẢO 0% DROP FPS)
-    if not _G.LastGlowTime or (os.clock() - _G.LastGlowTime) > 0.8 then
+    if not _G.LastGlowTime or (os.clock() - _G.LastGlowTime) > 0.5 then
         _G.LastGlowTime = os.clock()
         if _G.ApplyWeaponGlow then _G.ApplyWeaponGlow(localPlayer) end
     end
@@ -6964,16 +6889,13 @@ pcall(function()
         end
     end
 
-    -- CHẶN HIGGSBOSON: trạng thái không cần dipaksa setiap frame.
-    if (_now - _FluxPerf.lastHiggs) > 0.20 then
-        _FluxPerf.lastHiggs = _now
-        pcall(function()
-            if Valid(pc) then
-                if pc.HiggsBoson then pc.HiggsBoson.bMHActive = false; pc.HiggsBoson.bCallPreReplication = false end
-                if pc.HiggsBosonComponent then pc.HiggsBosonComponent.bMHActive = false; pc.HiggsBosonComponent.bCallPreReplication = false end
-            end
-        end)
-    end
+    -- CHẶN HIGGSBOSON THEO THỜI GIAN THỰC LÀM AN TOÀN TUYỆT ĐỐI MÀ KHÔNG GÂY VĂNG GAME
+    pcall(function()
+        if Valid(pc) then
+            if pc.HiggsBoson then pc.HiggsBoson.bMHActive = false; pc.HiggsBoson.bCallPreReplication = false end
+            if pc.HiggsBosonComponent then pc.HiggsBosonComponent.bMHActive = false; pc.HiggsBosonComponent.bCallPreReplication = false end
+        end
+    end)
 
     -- HOÀN TRẢ VÀ THIẾT LẬP AIMBOT HEAD COMPONENT BẬT/TẮT TỨC THÌ
     pcall(function()
@@ -8320,10 +8242,10 @@ local function ExpiredTick()
         pcall(function()
             local Msg = require("client.slua.logic.common.logic_common_msg_box")
             if Msg and Msg.Show then
-                Msg.Show(1, "MOD TELAH KADALUWARSA", "VERSI MOD ANDA TELAH KADALUWARSA!\nSILAKAN HUBUNGI ADMIN UNTUK PERPANJANG.\nInbox Tele @ZFG6969 Untuk Membeli, Jika Ada Orang Lain Yang Menjual Ini Kepada Anda Selain Saya, Selamat Anda Telah Tertipu", 
+                Msg.Show(1, "MOD TELAH KADALUWARSA", "VERSI MOD ANDA TELAH KADALUWARSA!\nSILAKAN HUBUNGI ADMIN UNTUK PERPANJANG.\nInbox Tele @RA6A09 Untuk Membeli, Jika Ada Orang Lain Yang Menjual Ini Kepada Anda Selain Saya, Selamat Anda Telah Tertipu", 
                 function() 
                     local Web = require("client.slua.logic.url.logic_webview_sdk")
-                    if Web and Web.OpenURL then Web:OpenURL("https://t.me/+OkliZkp3gnUyNGE1") end 
+                    if Web and Web.OpenURL then Web:OpenURL("https://t.me/r6gamingreal") end 
                 end, 
                 function() end, "HUBUNGI ADMIN", "TUTUP")
                 _G.LexusNotifiedPopup = true 
@@ -8342,7 +8264,7 @@ end
 local function FastTick() 
     if isExpired then 
         if not _G.LexusNotifiedExpire then
-            Notify("MOD TELAH KADALUWARSA! SILAKAN HUBUNGI ADMIN UNTUK PERPANJANG!\nInbox Tele @ZFG6969 Untuk Membeli, Jika Ada Orang Lain Yang Menjual Ini Kepada Anda Selain Saya, Selamat Anda Telah Tertipu")
+            Notify("MOD TELAH KADALUWARSA! SILAKAN HUBUNGI ADMIN UNTUK PERPANJANG!\nInbox Tele @RA6A09 Untuk Membeli, Jika Ada Orang Lain Yang Menjual Ini Kepada Anda Selain Saya, Selamat Anda Telah Tertipu")
             _G.LexusNotifiedExpire = true
             ExpiredTick() 
         end
@@ -8350,26 +8272,16 @@ local function FastTick()
     end
 
     if myToken ~= _G.LexusState.LoopToken then return end
-    local _t0 = os.clock()
-    pcall(MainLoop)
-    local _cost = os.clock() - _t0
-    -- 40-50Hz saat normal, otomatis melambat saat frame terlalu berat agar tidak terjadi
-    -- antrian timer yang menumpuk. Semua fitur tetap aktif; hanya frekuensi polling yang adaptif.
-    local _delay = 0.02
-    if _cost > 0.025 then
-        _delay = 0.05
-    elseif _cost > 0.012 then
-        _delay = 0.03
-    end
+    pcall(MainLoop) 
     local okTicker, ticker = pcall(require, "common.time_ticker") 
     if okTicker and ticker and ticker.AddTimerOnce then 
-        ticker.AddTimerOnce(_delay, FastTick) 
+        ticker.AddTimerOnce(0.01, FastTick) 
     end 
 end
 
 if not isExpired then
     FastTick() 
-    Notify("Anda Sedang Memainkan Mod Vvip 4 Milik Saya. Jika Belum Punya Key, Inbox Tele @ZFG6969 Untuk Membeli. Jika Ada Orang Lain Yang Menjual Ini Kepada Anda Selain Saya, Selamat Anda Telah Tertipu")
+    Notify("Anda Sedang Memainkan Mod Vvip 4 Milik Saya. Jika Belum Punya Key, Inbox Tele @RA6A09 Untuk Membeli. Jika Ada Orang Lain Yang Menjual Ini Kepada Anda Selain Saya, Selamat Anda Telah Tertipu")
 else
     FastTick() 
 end
@@ -10147,2019 +10059,6 @@ local ITEMS = {
     1410356, -- Mặt Nạ Ma Vương Huyết Hồn
     40605012, -- Tóc Hai Chùm
     401035, -- Mũ cao bồi (Trắng)
-
-    -- ===== Imported skin IDs from File 2 =====
-    1010042307,
-    1010042306,
-    1010042308,
-    1010042304,
-    1010042300,
-    1010042305,
-    1010042299,
-    1010042298,
-    1010042297,
-    1010042296,
-    1010042295,
-    1010042294,
-    1010042314,
-    1010042309,
-    1010042316,
-    1010042317,
-    1010042318,
-    1010042310,
-    1010042315,
-    1010042319,
-    1010011106,
-    1010011107,
-    1010011108,
-    1010011109,
-    1010011112,
-    1010011105,
-    1010011104,
-    1010011103,
-    1010011102,
-    1010011232,
-    1010011233,
-    1010011234,
-    1010011228,
-    1010011227,
-    1010011229,
-    1010011226,
-    1010011225,
-    1010011224,
-    1010011223,
-    1010011222,
-    1010011487,
-    1010011488,
-    1010011489,
-    1010011493,
-    1010011490,
-    1010011494,
-    1010011486,
-    1010011485,
-    1010011484,
-    1010011483,
-    1010011482,
-    1010011497,
-    1010011498,
-    1010011667,
-    1010011668,
-    1010011669,
-    1010011673,
-    1010011670,
-    1010011674,
-    1010011666,
-    1010011665,
-    1010011664,
-    1010011663,
-    1010011662,
-    1010012067,
-    1010012068,
-    1010012069,
-    1010012072,
-    1010012070,
-    1010012073,
-    1010012066,
-    1010012065,
-    1010012064,
-    1010012063,
-    1010012062,
-    1010012074,
-    1010012267,
-    1010012268,
-    1010012269,
-    1010012273,
-    1010012272,
-    1010012274,
-    1010012266,
-    1010012265,
-    1010012264,
-    1010012263,
-    1010012262,
-    1010012075,
-    1010012275,
-    1010012357,
-    1010012358,
-    1010012359,
-    1010012363,
-    1010012362,
-    1010012364,
-    1010012356,
-    1010012355,
-    1010012354,
-    1010012353,
-    1010012352,
-    1010012276,
-    1010012365,
-    1010012437,
-    1010012438,
-    1010012439,
-    1010012443,
-    1010012442,
-    1010012444,
-    1010012436,
-    1010012435,
-    1010012434,
-    1010012433,
-    1010012432,
-    1010012366,
-    1010012445,
-    1010012588,
-    1010012589,
-    1010012590,
-    1010012593,
-    1010012592,
-    1010012594,
-    1010012587,
-    1010012586,
-    1010012585,
-    1010012584,
-    1010012583,
-    1010012582,
-    1010012595,
-    1010012698,
-    1010012699,
-    1010012700,
-    1010012703,
-    1010012702,
-    1010012704,
-    1010012697,
-    1010012696,
-    1010012695,
-    1010012694,
-    1010012693,
-    1010012692,
-    1010012705,
-    1101002029,
-    1010020249,
-    1010020250,
-    1010020255,
-    1010020247,
-    1010020246,
-    1010020248,
-    1010020240,
-    1010020239,
-    1010020238,
-    1010020237,
-    1010020236,
-    1010020235,
-    1010020257,
-    1010020256,
-    1010020258,
-    1101002056,
-    1010020519,
-    1010020517,
-    1010020516,
-    1010020518,
-    1010020500,
-    1010020509,
-    1010020508,
-    1010020507,
-    1010020506,
-    1010020505,
-    1101002081,
-    1010020768,
-    1010020769,
-    1010020770,
-    1010020766,
-    1010020760,
-    1010020767,
-    1010020759,
-    1010020758,
-    1010020757,
-    1010020756,
-    1010020755,
-    1010020776,
-    1010020775,
-    1010020777,
-    1010020778,
-    1010030654,
-    1010030653,
-    1010030655,
-    1010030649,
-    1010030648,
-    1010030650,
-    1010030647,
-    1010030646,
-    1010030645,
-    1010030644,
-    1010030643,
-    1010030642,
-    1010030658,
-    1010030656,
-    1010030660,
-    1010030662,
-    1010030659,
-    1010030657,
-    1010030663,
-    1010030754,
-    1010030753,
-    1010030755,
-    1010030749,
-    1010030748,
-    1010030750,
-    1010030747,
-    1010030746,
-    1010030745,
-    1010030744,
-    1010030743,
-    1010030742,
-    1010030758,
-    1010030756,
-    1010030760,
-    1010030762,
-    1010030759,
-    1010030757,
-    1010030763,
-    1010030943,
-    1010030944,
-    1010030945,
-    1010030939,
-    1010030938,
-    1010030942,
-    1010030937,
-    1010030936,
-    1010030935,
-    1010030934,
-    1010030933,
-    1010030932,
-    1010030947,
-    1010030946,
-    1010030948,
-    1010030949,
-    1010030953,
-    1010030952,
-    1010030955,
-    1010031139,
-    1010031140,
-    1010031142,
-    1010031138,
-    1010031137,
-    1010031146,
-    1010031136,
-    1010031135,
-    1010031134,
-    1010031133,
-    1010031132,
-    1010031144,
-    1010031143,
-    1010031145,
-    1010031229,
-    1010031230,
-    1010031237,
-    1010031228,
-    1010031227,
-    1010031242,
-    1010031226,
-    1010031225,
-    1010031224,
-    1010031223,
-    1010031222,
-    1010031239,
-    1010031238,
-    1010031240,
-    1010031609,
-    1010031610,
-    1010031613,
-    1010031608,
-    1010031607,
-    1010031617,
-    1010031606,
-    1010031605,
-    1010031604,
-    1010031603,
-    1010031602,
-    1010031618,
-    1010031615,
-    1010031614,
-    1010031620,
-    1010031622,
-    1010031619,
-    1010031616,
-    1010031623,
-    1101003181,
-    1010031765,
-    1010031764,
-    1010031766,
-    1010031759,
-    1010031758,
-    1010031763,
-    1010031757,
-    1010031756,
-    1010031755,
-    1010031754,
-    1010031753,
-    1010031752,
-    1010031769,
-    1010031767,
-    1010031773,
-    1010031774,
-    1010031772,
-    1010031768,
-    1010031775,
-    1010031912,
-    1010031911,
-    1010031913,
-    1010031908,
-    1010031907,
-    1010031909,
-    1010031906,
-    1010031905,
-    1010031904,
-    1010031903,
-    1010031902,
-    1010031901,
-    1010031916,
-    1010031914,
-    1010031918,
-    1010031919,
-    1010031917,
-    1010031915,
-    1010031921,
-    1010032034,
-    1010032033,
-    1010032045,
-    1010032029,
-    1010032028,
-    1010032032,
-    1010032027,
-    1010032026,
-    1010032025,
-    1010032024,
-    1010032023,
-    1010032022,
-    1010032038,
-    1010032036,
-    1010032042,
-    1010032043,
-    1010032039,
-    1010032037,
-    1010032044,
-    1010040474,
-    1010040475,
-    1010040476,
-    1010040472,
-    1010040471,
-    1010040473,
-    1010040470,
-    1010040469,
-    1010040468,
-    1010040467,
-    1010040466,
-    1010040481,
-    1010040479,
-    1010040477,
-    1010040482,
-    1010040483,
-    1010040484,
-    1010040478,
-    1010040480,
-    1010040485,
-    1010040578,
-    1010040577,
-    1010040579,
-    1010040575,
-    1010040570,
-    1010040576,
-    1010040569,
-    1010040568,
-    1010040567,
-    1010040566,
-    1010040565,
-    1010040564,
-    1010040585,
-    1010040580,
-    1010040587,
-    1010040588,
-    1010040589,
-    1010040584,
-    1010040586,
-    1010040590,
-    1010040594,
-    1010040924,
-    1010040926,
-    1010040925,
-    1010040937,
-    1010040938,
-    1010040935,
-    1010040934,
-    1010040929,
-    1010040928,
-    1010040927,
-    1010040939,
-    1010040945,
-    1010040944,
-    1010040936,
-    1010041136,
-    1010041137,
-    1010041138,
-    1010041134,
-    1010041129,
-    1010041135,
-    1010041128,
-    1010041127,
-    1010041126,
-    1010041125,
-    1010041124,
-    1010041145,
-    1010041139,
-    1010041144,
-    1010041146,
-    1010041570,
-    1010041574,
-    1010041575,
-    1010041568,
-    1010041567,
-    1010041569,
-    1010041566,
-    1010041565,
-    1010041564,
-    1010041560,
-    1010041554,
-    1010041578,
-    1010041576,
-    1010041577,
-    1010041579,
-    1010041956,
-    1010041957,
-    1010041958,
-    1010041950,
-    1010041949,
-    1010041955,
-    1010041948,
-    1010041947,
-    1010041946,
-    1010041945,
-    1010041944,
-    1010041967,
-    1010041965,
-    1010041959,
-    1010041960,
-    1010041966,
-    1010042038,
-    1010042037,
-    1010042039,
-    1010042035,
-    1010042034,
-    1010042036,
-    1010042029,
-    1010042028,
-    1010042027,
-    1010042026,
-    1010042025,
-    1010042024,
-    1010042046,
-    1010042044,
-    1010042048,
-    1010042049,
-    1010042054,
-    1010042045,
-    1010042047,
-    1010042055,
-    1010042128,
-    1010042127,
-    1010042129,
-    1010042125,
-    1010042124,
-    1010042126,
-    1010042119,
-    1010042118,
-    1010042117,
-    1010042116,
-    1010042115,
-    1010042114,
-    1010042136,
-    1010042134,
-    1010042138,
-    1010042139,
-    1010042144,
-    1010042135,
-    1010042137,
-    1010042145,
-    1010042238,
-    1010042237,
-    1010042239,
-    1010042235,
-    1010042234,
-    1010042236,
-    1010042233,
-    1010042232,
-    1010042231,
-    1010042219,
-    1010042218,
-    1010042217,
-    1010042243,
-    1010042241,
-    1010042245,
-    1010042246,
-    1010042247,
-    1010042242,
-    1010042244,
-    1010042248,
-    1010042406,
-    1010042407,
-    1010042408,
-    1010042404,
-    1010042400,
-    1010042405,
-    1010042399,
-    1010042398,
-    1010042397,
-    1010042396,
-    1010042395,
-    1010042394,
-    1010042414,
-    1010042409,
-    1010042416,
-    1010042417,
-    1010042418,
-    1010042410,
-    1010042415,
-    1010042419,
-    1010042420,
-    1010050327,
-    1010050329,
-    1010050328,
-    1010050330,
-    1010050326,
-    1010050325,
-    1010050324,
-    1010050323,
-    1010050322,
-    1010050334,
-    1010050467,
-    1010050469,
-    1010050468,
-    1010050470,
-    1010050466,
-    1010050465,
-    1010050464,
-    1010050463,
-    1010050462,
-    1010050473,
-    1010050928,
-    1010050930,
-    1010050929,
-    1010050932,
-    1010050927,
-    1010050926,
-    1010050925,
-    1010050924,
-    1010050923,
-    1010050922,
-    1010060573,
-    1010060572,
-    1010060574,
-    1010060564,
-    1010060563,
-    1010060571,
-    1010060562,
-    1010060561,
-    1010060554,
-    1010060553,
-    1010060552,
-    1010060551,
-    1010060583,
-    1010060581,
-    1010060591,
-    1010060592,
-    1010060584,
-    1010060582,
-    1010060593,
-    1010060702,
-    1010060701,
-    1010060703,
-    1010060698,
-    1010060697,
-    1010060699,
-    1010060696,
-    1010060695,
-    1010060694,
-    1010060693,
-    1010060692,
-    1010060691,
-    1010060706,
-    1010060704,
-    1010060708,
-    1010060709,
-    1010060707,
-    1010060705,
-    1010060711,
-    1010060796,
-    1010060795,
-    1010060797,
-    1010060793,
-    1010060789,
-    1010060794,
-    1010060788,
-    1010060787,
-    1010060786,
-    1010060785,
-    1010060784,
-    1010060783,
-    1010060800,
-    1010060798,
-    1010060804,
-    1010060805,
-    1010060803,
-    1010060799,
-    1010060806,
-    1010070410,
-    1010070413,
-    1010070414,
-    1010070408,
-    1010070407,
-    1010070409,
-    1010070406,
-    1010070405,
-    1010070404,
-    1010070403,
-    1010070402,
-    1010070418,
-    1010070417,
-    1010070415,
-    1010070420,
-    1010070422,
-    1010070419,
-    1010070416,
-    1010070423,
-    1010070579,
-    1010070578,
-    1010070581,
-    1010070576,
-    1010070575,
-    1010070577,
-    1010070574,
-    1010070573,
-    1010070572,
-    1010070571,
-    1010070569,
-    1010070568,
-    1010070584,
-    1010070582,
-    1010070585,
-    1010070586,
-    1010070587,
-    1010070583,
-    1010070588,
-    1010070663,
-    1010070662,
-    1010070664,
-    1010070659,
-    1010070658,
-    1010070660,
-    1010070657,
-    1010070656,
-    1010070655,
-    1010070654,
-    1010070653,
-    1010070652,
-    1010070667,
-    1010070665,
-    1010070668,
-    1010070669,
-    1010070670,
-    1010070666,
-    1010070672,
-    1010080463,
-    1010080464,
-    1010080465,
-    1010080459,
-    1010080458,
-    1010080462,
-    1010080457,
-    1010080456,
-    1010080455,
-    1010080454,
-    1010080453,
-    1010080452,
-    1010080467,
-    1010080466,
-    1010080468,
-    1010080469,
-    1010080473,
-    1010080472,
-    1010080475,
-    1010080563,
-    1010080564,
-    1010080565,
-    1010080559,
-    1010080558,
-    1010080562,
-    1010080557,
-    1010080556,
-    1010080555,
-    1010080554,
-    1010080553,
-    1010080567,
-    1010080566,
-    1010080572,
-    1010080609,
-    1010080612,
-    1010080613,
-    1010080608,
-    1010080607,
-    1010080617,
-    1010080606,
-    1010080605,
-    1010080604,
-    1010080603,
-    1010080602,
-    1010080615,
-    1010080614,
-    1010080616,
-    1010080740,
-    1010080743,
-    1010080745,
-    1010080738,
-    1010080737,
-    1010080739,
-    1010080736,
-    1010080735,
-    1010080734,
-    1010080733,
-    1010080732,
-    1010080748,
-    1010080747,
-    1010080746,
-    1010080750,
-    1010080752,
-    1010080749,
-    1010080744,
-    1010080753,
-    1010080980,
-    1010080982,
-    1010080984,
-    1010080978,
-    1010080977,
-    1010080979,
-    1010080976,
-    1010080975,
-    1010080974,
-    1010080973,
-    1010080972,
-    1010080992,
-    1010080986,
-    1010080985,
-    1010080989,
-    1010080987,
-    1010080993,
-    1010080983,
-    1010080988,
-    1010081110,
-    1010081112,
-    1010081114,
-    1010081108,
-    1010081107,
-    1010081109,
-    1010081106,
-    1010081105,
-    1010081104,
-    1010081103,
-    1010081102,
-    1010081116,
-    1010081115,
-    1010081113,
-    1010081210,
-    1010081225,
-    1010081226,
-    1010081208,
-    1010081207,
-    1010081209,
-    1010081206,
-    1010081205,
-    1010081204,
-    1010081203,
-    1010081202,
-    1010081218,
-    1010081217,
-    1010081216,
-    1010081219,
-    1010081220,
-    1010081222,
-    1010081214,
-    1010081228,
-    1010081227,
-    1010081229,
-    1010081314,
-    1010081315,
-    1010081316,
-    1010081312,
-    1010081308,
-    1010081313,
-    1010081307,
-    1010081306,
-    1010081305,
-    1010081304,
-    1010081303,
-    1010081302,
-    1010081318,
-    1010081317,
-    1010081322,
-    1010081323,
-    1010081325,
-    1010081324,
-    1010081326,
-    1010081401,
-    1010081402,
-    1010081403,
-    1010081398,
-    1010081397,
-    1010081399,
-    1010081396,
-    1010081395,
-    1010081394,
-    1010081393,
-    1010081392,
-    1010081391,
-    1010081405,
-    1010081404,
-    1010081406,
-    1010081407,
-    1010081409,
-    1010081408,
-    1010081411,
-    1010081531,
-    1010081532,
-    1010081533,
-    1010081528,
-    1010081527,
-    1010081529,
-    1010081526,
-    1010081525,
-    1010081524,
-    1010081523,
-    1010081522,
-    1010081521,
-    1010081541,
-    1010081534,
-    1010081542,
-    1010081543,
-    1010081545,
-    1010081544,
-    1010081546,
-    1010081582,
-    1010081583,
-    1010081584,
-    1010081579,
-    1010081578,
-    1010081580,
-    1010081577,
-    1010081576,
-    1010081575,
-    1010081574,
-    1010081573,
-    1010081572,
-    1010081586,
-    1010081585,
-    1010081587,
-    1010081588,
-    1010081590,
-    1010081589,
-    1010081592,
-    1010120284,
-    1010120285,
-    1010120286,
-    1010120280,
-    1010120279,
-    1010120283,
-    1010120278,
-    1010120277,
-    1010120276,
-    1010120275,
-    1010120274,
-    1010120273,
-    1010120287,
-    1011000066,
-    1011000067,
-    1011000068,
-    1011000058,
-    1011000057,
-    1011000056,
-    1011000055,
-    1011000054,
-    1011000053,
-    1011000073,
-    1011010025,
-    1011010024,
-    1011010026,
-    1011010020,
-    1011010019,
-    1011010023,
-    1011010018,
-    1011010017,
-    1011010016,
-    1011010015,
-    1011010014,
-    1011010013,
-    1011010027,
-    1011020027,
-    1011020028,
-    1011020029,
-    1011020025,
-    1011020024,
-    1011020026,
-    1011020019,
-    1011020018,
-    1011020017,
-    1011020016,
-    1011020015,
-    1011020014,
-    1011020036,
-    1011020034,
-    1011020038,
-    1011020039,
-    1011020044,
-    1011020035,
-    1011020037,
-    1011020045,
-    1011020047,
-    1011020127,
-    1011020128,
-    1011020129,
-    1011020125,
-    1011020124,
-    1011020126,
-    1011020119,
-    1011020118,
-    1011020117,
-    1011020116,
-    1011020115,
-    1011020114,
-    1011020136,
-    1011020134,
-    1011020138,
-    1011020139,
-    1011020144,
-    1011020135,
-    1011020137,
-    1011020145,
-    1011020214,
-    1011020215,
-    1011020216,
-    1011020212,
-    1011020211,
-    1011020213,
-    1011020209,
-    1011020208,
-    1011020207,
-    1011020206,
-    1011020205,
-    1011020204,
-    1011020219,
-    1011020217,
-    1011020222,
-    1011020223,
-    1011020224,
-    1011020218,
-    1011020221,
-    1011020225,
-    1011020229,
-    1011020356,
-    1011020357,
-    1011020358,
-    1011020354,
-    1011020350,
-    1011020355,
-    1011020349,
-    1011020348,
-    1011020347,
-    1011020346,
-    1011020345,
-    1011020344,
-    1011020364,
-    1011020359,
-    1011020366,
-    1011020367,
-    1011020368,
-    1011020360,
-    1011020365,
-    1011020369,
-    1011020370,
-    1011020436,
-    1011020437,
-    1011020438,
-    1011020434,
-    1011020430,
-    1011020435,
-    1011020429,
-    1011020428,
-    1011020427,
-    1011020426,
-    1011020425,
-    1011020424,
-    1011020444,
-    1011020439,
-    1011020446,
-    1011020447,
-    1011020448,
-    1011020440,
-    1011020445,
-    1011020449,
-    1011020450,
-    1020011137,
-    1020011138,
-    1020011139,
-    1020011135,
-    1020011134,
-    1020011136,
-    1020011133,
-    1020011132,
-    1020011142,
-    1020011247,
-    1020011248,
-    1020011249,
-    1020011245,
-    1020011244,
-    1020011246,
-    1020011243,
-    1020011242,
-    1020011250,
-    1020020372,
-    1020020374,
-    1020020373,
-    1020020383,
-    1020020380,
-    1020020384,
-    1020020379,
-    1020020378,
-    1020020377,
-    1020020376,
-    1020020375,
-    1020020388,
-    1020020385,
-    1020020387,
-    1020020386,
-    1020020552,
-    1020020554,
-    1020020553,
-    1020020563,
-    1020020562,
-    1020020564,
-    1020020559,
-    1020020558,
-    1020020557,
-    1020020556,
-    1020020555,
-    1020020578,
-    1020020565,
-    1020020567,
-    1020020573,
-    1020020574,
-    1020020572,
-    1020020566,
-    1020020569,
-    1020021314,
-    1020021313,
-    1020021315,
-    1020021309,
-    1020021308,
-    1020021312,
-    1020021307,
-    1020021306,
-    1020021305,
-    1020021304,
-    1020021303,
-    1020021302,
-    1020021318,
-    1020021316,
-    1020021323,
-    1020021324,
-    1020021322,
-    1020021317,
-    1020021325,
-    1020024193,
-    1020024192,
-    1020024194,
-    1020024189,
-    1020024188,
-    1020024190,
-    1020024187,
-    1020024186,
-    1020024185,
-    1020024184,
-    1020024183,
-    1020024182,
-    1020024197,
-    1020024195,
-    1020024199,
-    1020024200,
-    1020024198,
-    1020024196,
-    1020024202,
-    1020030755,
-    1020030756,
-    1020030758,
-    1020030749,
-    1020030754,
-    1020030748,
-    1020030747,
-    1020030746,
-    1020030745,
-    1020030744,
-    1020030764,
-    1020030760,
-    1020030759,
-    1020030757,
-    1020030765,
-    1020030956,
-    1020030957,
-    1020030958,
-    1020030954,
-    1020030950,
-    1020030955,
-    1020030949,
-    1020030948,
-    1020030947,
-    1020030946,
-    1020030945,
-    1020030944,
-    1020030964,
-    1020030960,
-    1020030959,
-    1020030965,
-    1020030967,
-    1020030966,
-    1020030968,
-    1020050588,
-    1020050589,
-    1020050590,
-    1020050587,
-    1020050586,
-    1020050585,
-    1020050584,
-    1020050583,
-    1020050582,
-    1020050592,
-    1030010954,
-    1030010955,
-    1030010956,
-    1030010953,
-    1030010952,
-    1030010951,
-    1030010957,
-    1030010958,
-    1030011344,
-    1030011345,
-    1030011346,
-    1030011343,
-    1030011342,
-    1030011341,
-    1030011347,
-    1030011348,
-    1030011484,
-    1030011485,
-    1030011486,
-    1030011483,
-    1030011482,
-    1030011481,
-    1030011487,
-    1030011488,
-    1030011738,
-    1030011739,
-    1030011741,
-    1030011737,
-    1030011736,
-    1030011735,
-    1030011734,
-    1030011733,
-    1030011732,
-    1030011731,
-    1030011742,
-    1030011743,
-    1030011744,
-    1030011858,
-    1030011859,
-    1030011861,
-    1030011857,
-    1030011856,
-    1030011855,
-    1030011854,
-    1030011853,
-    1030011852,
-    1030011851,
-    1030011862,
-    1030011863,
-    1030011864,
-    1030011948,
-    1030011949,
-    1030011950,
-    1030011947,
-    1030011946,
-    1030011945,
-    1030011944,
-    1030011943,
-    1030011942,
-    1030011941,
-    1030011951,
-    1030011952,
-    1030011953,
-    1030020245,
-    1030020246,
-    1030020247,
-    1030020252,
-    1030020249,
-    1030020253,
-    1030020258,
-    1030020257,
-    1030020256,
-    1030020255,
-    1030020244,
-    1030020243,
-    1030020242,
-    1030020248,
-    1030020544,
-    1030020545,
-    1030020546,
-    1030020542,
-    1030020539,
-    1030020543,
-    1030020538,
-    1030020537,
-    1030020536,
-    1030020535,
-    1030020534,
-    1030020533,
-    1030020532,
-    1030020547,
-    1030020548,
-    1030020824,
-    1030020825,
-    1030020826,
-    1030020818,
-    1030020817,
-    1030020816,
-    1030020815,
-    1030020814,
-    1030020813,
-    1030020812,
-    1030020827,
-    1030020828,
-    1030021009,
-    1030021010,
-    1030021012,
-    1030021015,
-    1030021014,
-    1030021016,
-    1030021008,
-    1030021007,
-    1030021006,
-    1030021005,
-    1030021004,
-    1030021003,
-    1030021002,
-    1030021013,
-    1030021017,
-    1103002113,
-    1030021079,
-    1030021080,
-    1030021082,
-    1030021085,
-    1030021084,
-    1030021086,
-    1030021078,
-    1030021077,
-    1030021076,
-    1030021075,
-    1030021074,
-    1030021073,
-    1030021072,
-    1030021083,
-    1030021087,
-    1030030165,
-    1030030166,
-    1030030167,
-    1030030172,
-    1030030169,
-    1030030173,
-    1030030164,
-    1030030163,
-    1030030162,
-    1030030256,
-    1030030257,
-    1030030258,
-    1030030254,
-    1030030253,
-    1030030255,
-    1030030248,
-    1030030247,
-    1030030246,
-    1030030245,
-    1030030244,
-    1030030243,
-    1030030242,
-    1030030259,
-    1030030249,
-    1030030374,
-    1030030375,
-    1030030376,
-    1030030372,
-    1030030369,
-    1030030373,
-    1030030364,
-    1030030363,
-    1030030362,
-    1030030377,
-    1030030458,
-    1030030459,
-    1030030460,
-    1030030456,
-    1030030455,
-    1030030457,
-    1030030454,
-    1030030453,
-    1030030452,
-    1030030463,
-    1030030568,
-    1030030569,
-    1030030570,
-    1030030566,
-    1030030565,
-    1030030567,
-    1030030564,
-    1030030563,
-    1030030562,
-    1030030572,
-    1030030744,
-    1030030745,
-    1030030746,
-    1030030742,
-    1030030740,
-    1030030743,
-    1030030738,
-    1030030737,
-    1030030736,
-    1030030735,
-    1030030734,
-    1030030733,
-    1030030732,
-    1030030747,
-    1030030739,
-    1030030825,
-    1030030826,
-    1030030827,
-    1030030823,
-    1030030824,
-    1030030818,
-    1030030817,
-    1030030816,
-    1030030815,
-    1030030814,
-    1030030813,
-    1030030812,
-    1030030828,
-    1030030819,
-    1030040315,
-    1030040316,
-    1030040317,
-    1030040325,
-    1030040324,
-    1030040323,
-    1030040314,
-    1030040313,
-    1030040312,
-    1030040327,
-    1030040326,
-    1030040328,
-    1030040329,
-    1030060245,
-    1030060246,
-    1030060247,
-    1030060253,
-    1030060252,
-    1030060244,
-    1030060243,
-    1030060242,
-    1030070233,
-    1030070234,
-    1030070235,
-    1030070226,
-    1030070225,
-    1030070227,
-    1030070218,
-    1030070217,
-    1030070216,
-    1030070215,
-    1030070214,
-    1030070213,
-    1030070212,
-    1030070236,
-    1030070219,
-    1030120038,
-    1030120037,
-    1030120036,
-    1030120035,
-    1030120034,
-    1030120033,
-    1030120032,
-    1030120138,
-    1030120137,
-    1030120136,
-    1030120135,
-    1030120134,
-    1030120133,
-    1030120132,
-    1030120258,
-    1030120257,
-    1030120256,
-    1030120255,
-    1030120254,
-    1030120253,
-    1030120252,
-    1030120339,
-    1030120338,
-    1030120337,
-    1030120336,
-    1030120335,
-    1030120334,
-    1030120333,
-    1031020026,
-    1031020027,
-    1031020028,
-    1031020024,
-    1031020023,
-    1031020025,
-    1031020019,
-    1031020018,
-    1031020017,
-    1031020016,
-    1031020015,
-    1031020014,
-    1031020013,
-    1031020029,
-    1050010287,
-    1050010289,
-    1050010286,
-    1050010285,
-    1050010284,
-    1050010283,
-    1050010282,
-    1050010292,
-    1050010429,
-    1050010428,
-    1050010434,
-    1050010427,
-    1050010426,
-    1050010425,
-    1050010424,
-    1050010423,
-    1050010435,
-    1050010436,
-    1050010639,
-    1050010638,
-    1050010640,
-    1050010637,
-    1050010636,
-    1050010635,
-    1050010634,
-    1050010633,
-    1050010645,
-    1050010643,
-    1050010646,
-    1050010644,
-    1050020847,
-    1050020846,
-    1050020845,
-    1050020844,
-    1050020843,
-    1050020842,
-    1050020848,
-    1050100144,
-    1050100143,
-    1050100142,
-    1050100141,
-    1050100139,
-    1050100138,
-    1010060925,
-    1010060926,
-    1010060927,
-    1010060919,
-    1010060924,
-    1010060918,
-    1010060917,
-    1010060916,
-    1010060915,
-    1010060914,
-    1010060913,
-    1010060930,
-    1010060928,
-    1010060929,
-    1010060935,
-    1010060934,
-    1010060933,
-    1010060936,
-    1010061004,
-    1010061005,
-    1010061006,
-    1010060999,
-    1010061000,
-    1010061003,
-    1010060998,
-    1010060997,
-    1010060996,
-    1010060995,
-    1010060994,
-    1010060993,
-    1010061009,
-    1010061007,
-    1010061008,
-    1010061014,
-    1010061013,
-    1010061010,
-    1010061015,
-    403003,
-    1407285,
-    1407275,
-    1407225,
-    1407224,
-    1407259,
-    1407161,
-    1407160,
-    1407107,
-    1407106,
-    1407079,
-    1407048,
-    1406977,
-    1406976,
-    1406898,
-    1400119,
-    1406060,
-    1405145,
-    1405436,
-    1405435,
-    1405434,
-    1405064,
-    1405207,
-    1406895,
-    1400333,
-    1400377,
-    1405092,
-    1405121,
-    1406889,
-    1407278,
-    1407279,
-    1407381,
-    1407380,
-    1407385,
-    1406140,
-    1407318,
-    1407317,
-    1404434,
-    1404437,
-    1404440,
-    1404448,
-    1400708,
-    1405953,
-    1404153,
-    1407441,
-    501001,
-    501002,
-    501003,
-    1501002024,
-    1501003024,
-    1501002061,
-    1501003061,
-    1501002062,
-    1501003062,
-    1501002082,
-    1501003082,
-    1501002112,
-    1501003112,
-    1501002133,
-    1501003133,
-    1501002174,
-    1501003174,
-    1501002220,
-    1501003220,
-    1501002243,
-    1501003243,
-    1501002265,
-    1501003265,
-    1501002273,
-    1501003273,
-    1501002304,
-    1501003304,
-    1501002331,
-    1501003331,
-    1501002340,
-    1501003340,
-    1501002376,
-    1501003376,
-    1501002400,
-    1501003400,
-    1501002463,
-    1501003463,
-    1501002476,
-    1501003476,
-    1501002480,
-    1501003480,
-    1501002487,
-    1501003487,
-    1501002521,
-    1501003521,
-    1501002539,
-    1501003539,
-    1501002540,
-    1501003540,
-    1501002548,
-    1501003548,
-    1501002554,
-    1501003554,
-    1501002559,
-    1501003559,
-    1501002567,
-    1501003567,
-    1501002577,
-    1501003577,
-    1501002587,
-    1501003587,
-    1501002597,
-    1501003597,
-    1501002607,
-    1501003607,
-    1501002632,
-    1501003632,
-    1501002643,
-    1501003643,
-    1501002650,
-    1501003650,
-    1501002683,
-    1501003683,
-    1501002715,
-    1501003715,
-    1501002720,
-    1501003720,
-    502001,
-    502002,
-    502003,
-    1502002001,
-    1502003001,
-    1502002004,
-    1502003004,
-    1502002005,
-    1502003005,
-    1502002014,
-    1502003014,
-    1502002023,
-    1502003023,
-    1502002046,
-    1502003046,
-    1502002058,
-    1502003058,
-    1502002064,
-    1502003064,
-    1502002069,
-    1502003069,
-    1502002073,
-    1502003073,
-    1502002078,
-    1502003078,
-    1502002086,
-    1502003086,
-    1502002093,
-    1502003093,
-    1502002099,
-    1502003099,
-    1502002105,
-    1502003105,
-    1502002115,
-    1502003115,
-    1502002133,
-    1502003133,
-    1502002145,
-    1502003145,
-    1502002154,
-    1502003154,
-    1502002175,
-    1502003175,
-    1502002183,
-    1502003183,
-    1502002194,
-    1502003194,
-    1502002230,
-    1502003230,
-    1502002248,
-    1502003248,
-    1502002264,
-    1502003264,
-    1502002276,
-    1502003276,
-    1502002294,
-    1502003294,
-    1502002301,
-    1502003301,
-    1502002305,
-    1502003305,
-    1502002320,
-    1502003320,
-    1502002357,
-    1502003357,
-    1502002364,
-    1502003364,
-    1502002373,
-    1502003373,
-    1502002381,
-    1502003381,
-    1502002402,
-    1502003402,
-    1502002403,
-    1502003403,
-    1502002416,
-    1502003416,
-    1502002427,
-    1502003427,
-    1502002439,
-    1502003439,
-    1502002443,
-    1502003443,
-    1502002450,
-    1502003450,
-    1502002453,
-    1502003453,
-    1502002471,
-    1502003471,
-    1502002480,
-    1502003480,
-    1502002490,
-    1502003490,
-    1502002495,
-    1502003495,
-    50000,
-    50001,
-    50002,
-    50003,
-    50004,
-    50005,
-    50006,
-    50021,
-    50022,
-    50038,
-    50039,
-    50040,
-    101004,
-    101001,
-    1101001172,
-    1101001127,
-    1101001230,
-    1101001241,
-    101003,
-    1103003208,
-    1101003187,
-    1101003098,
-    1101003166,
-    1101003218,
-    102002,
-    101008,
-    1101008079,
-    101006,
-    1101006061,
-    1101006074,
-    1101006043,
-    1101006032,
-    1101006084,
-    102001,
-    101005,
-    104003,
-    104004,
-    1961001,
-    1961033,
-    1961034,
-    1961035,
-    1903001,
-    1903005,
-    1903006,
-    1903007,
-    1903008,
-    1903011,
-    1903012,
-    1903013,
-    1903014,
-    1903015,
-    1903016,
-    1903017,
-    1903018,
-    1903019,
-    1903020,
-    1903021,
-    1903022,
-    1903023,
-    1903024,
-    1903029,
-    1903030,
-    1903031,
-    1903032,
-    1903033,
-    1903034,
-    1903035,
-    1903036,
-    1903037,
-    1903039,
-    1903040,
-    1903041,
-    1903042,
-    1903043,
-    1903044,
-    1903045,
-    1903046,
-    1903051,
-    1903052,
-    1903053,
-    1903054,
-    1903055,
-    1903056,
-    1903057,
-    1903058,
-    1903059,
-    1903060,
-    1903061,
-    1903062,
-    1903063,
-    1903066,
-    1903067,
-    1903068,
-    1903069,
-    1903070,
-    1903081,
-    1903082,
-    1903084,
-    1903085,
-    1903086,
-    1903087,
-    1903191,
-    1903192,
-    1903193,
-    1903194,
-    1903195,
-    1903196,
-    1903197,
-    1903198,
-    1903199,
-    1903202,
-    1903203,
-    1903204,
-    1903205,
-    1903206,
-    1903207,
-    1903208,
-    1903209,
-    1903212,
-    1903213,
-    1903214,
-    1903215,
-    1903216,
-    1903217,
-    1903225,
-    1903226,
-    1903227,
-    1903228,
-    1915001,
-    1915002,
-    1915003,
-    1915004,
-    1915010,
-    1915011,
-    1915012,
-    1915013,
-    1915014,
-    1915015,
-    1915016,
-    1915017,
-    1915018,
-    1915019,
-    1915020,
-    1915023,
-    1915024,
-    1915025,
-    1915026,
-    1915027,
-    1915099,
-    1908001,
-    1908002,
-    1908003,
-    1908005,
-    1908006,
-    1908007,
-    1908008,
-    1908009,
-    1908010,
-    1908011,
-    1908012,
-    1908013,
-    1908015,
-    1908016,
-    1908017,
-    1908018,
-    1908019,
-    1908021,
-    1908023,
-    1908030,
-    1908031,
-    1908032,
-    1908033,
-    1908034,
-    1908035,
-    1908036,
-    1908037,
-    1908039,
-    1908040,
-    1908041,
-    1908043,
-    1908047,
-    1908049,
-    1908050,
-    1908051,
-    1908052,
-    1908053,
-    1908054,
-    1908055,
-    1908056,
-    1908057,
-    1908059,
-    1908060,
-    1908061,
-    1908062,
-    1908063,
-    1908064,
-    1908068,
-    1908069,
-    1908070,
-    1908080,
-    1908081,
-    1908082,
-    1908083,
-    1908087,
-    1908091,
-    1908096,
-    1908097,
-    1908098,
-    1908099,
-    1908100,
-    1908101,
-    1908102,
-    1908104,
-    1908105,
-    1908106,
-    1908107,
-    1908110,
-    1908111,
-    1908112,
-    1907001,
-    1907007,
-    1907008,
-    1907010,
-    1907011,
-    1907012,
-    1907013,
-    1907014,
-    1907016,
-    1907018,
-    1907019,
-    1907021,
-    1907022,
-    1907023,
-    1907025,
-    1907026,
-    1907027,
-    1907028,
-    1907029,
-    1907030,
-    1907032,
-    1907033,
-    1907034,
-    1907035,
-    1907036,
-    1907037,
-    1907038,
-    1907040,
-    1907041,
-    1907043,
-    1907044,
-    1907045,
-    1907046,
-    1907047,
-    1907048,
-    1907049,
-    1907050,
-    1907051,
-    1907052,
-    1907053,
-    1907055,
-    1907056,
-    1907060,
-    1907061,
-    1907062,
-    1907063,
-    1907064,
-    1907065,
-    1907066,
-    1907067,
-    1907068,
-    1907069,
-    1907070,
-    1907071,
-    1907072,
-    1907073,
-    1907074,
 }
 
 local INS_BASE = 2000000000
@@ -14215,7 +12114,7 @@ local function GetOutfitConfigPaths(fileName)
     return paths
 end
 
-local CONFIG_PATHS = GetOutfitConfigPaths("ZULFINUX_outfit.json")
+local CONFIG_PATHS = GetOutfitConfigPaths("RA6A09_outfit.json")
 
 local PERSIST_SLOTS = {
     { "outfit", "outfitRes", "outfitIns", "AddOutfitLastLobbyOutfitRes" },
@@ -20053,10 +17952,11 @@ pcall(function()
         ticker.AddTimerLoop(0, AutoRestoreLobbySkin, -1, 1.0)
     end
 end)
-
-
+-- ==============================================================================
+-- ================= KẾT THÚC CORE ADD-OUTFIT V7.5 (HỆ THỐNG SKIN) ==============
+-- ==============================================================================
 -- ==========================================
--- WATERMARK PERMANEN "@R6gaming" WARNA CYAN
+-- WATERMARK PERMANEN "@R6gaming" WARNA KUNING
 -- ==========================================
 pcall(function()
     local IPS = require("GameLua.Mod.Library.Client.UI.IngamePhoneStateUI")
@@ -20064,877 +17964,12 @@ pcall(function()
         local o = IPS.__inner_impl.UpdateArtQualityUI
         IPS.__inner_impl.UpdateArtQualityUI = function(self, _, _)
             if self.UIRoot and self.UIRoot.TextBlock_quality then
-                self.UIRoot.TextBlock_quality:SetText("FLUX3-DAY")
-                self.UIRoot.TextBlock_quality:SetColorAndOpacity(FSlateColor(FLinearColor(0.0, 1.0, 1.0, 1.0))) -- Cyan
+                self.UIRoot.TextBlock_quality:SetText("R6 GAMING X1")
+                self.UIRoot.TextBlock_quality:SetColorAndOpacity(FSlateColor(FLinearColor(1, 1, 0, 1))) -- Kuning
             end
         end
     end
 end)
-
-
-
-
--- ============================================================================
--- ======================= AUTO REPORT SYSTEM ================================
--- ============================================================================
-
--- ============================================================================
--- ======================= AUTO REPORT SYSTEM ================================
--- ============================================================================
--- ============================================================================
--- AUTO REPORT SYSTEM - PASTE DI AKHIR FILE
--- ============================================================================
-
--- ============================================================================
--- AUTO REPORT SYSTEM - COMPLETE PACKAGE
--- ============================================================================
-
-
-
--- ============================================================================
--- FAST MOVEMENT BY SRC HUB MADE BY @R6gaming
--- ============================================================================
-
-local TXtime_ticker = require('common.time_ticker')
-
-local CFG = {
-    Enabled       = true,
-    Multiplier    = 10.0,  
-    MaxSafe       = 25.0,
-    RampTime      = 0.5,
-    VelocityBoost = 1.0,   
-    DEBUG         = false,
-}
-
--- SINKRONISASI DENGAN LEXUS CONFIG
-_G.LexusConfig.FastMovement = _G.LexusConfig.FastMovement or false
-_G.LexusConfig.FastMovementSpeed = _G.LexusConfig.FastMovementSpeed or 10
-
-_G.R6gaming_Config  = CFG
-_G.R6gaming_Enabled = false
-
-local S = { char=nil, saved=false, o={}, curMult=1.0, hbT=0 }
-
-local LOG_PATHS = {
-    '/storage/emulated/0/Android/data/com.pubg.imobile/files/R6gaming_log.txt',
-    '/storage/emulated/0/Android/data/com.tencent.ig/files/R6gaming_log.txt',
-    '/storage/emulated/0/Android/data/com.pubg.krmobile/files/R6gaming_log.txt',
-}
-local LOG_PATH = nil
-
-local function Log(msg, force)
-    if not (CFG.DEBUG or force) then return end
-    pcall(function()
-        if not LOG_PATH then
-            for _, p in ipairs(LOG_PATHS) do
-                local f = io.open(p, 'a')
-                if f then f:close() LOG_PATH = p break end
-            end
-            if not LOG_PATH then LOG_PATH = LOG_PATHS[1] end
-        end
-        local f = io.open(LOG_PATH, 'a')
-        if f then
-            f:write(os.date('%H:%M:%S ') .. tostring(msg) .. '\n')
-            f:close()
-        end
-    end)
-end
-
-pcall(function()
-    local f = io.open(LOG_PATHS[1], 'w')
-    if f then f:write('=== Fast Movement ===\n') f:close() end
-    LOG_PATH = LOG_PATHS[1]
-end)
-
-local function PLog(msg)
-    print(msg)
-    Log(msg, true)
-end
-
-local function GetMyChar()
-    local ok, ch = pcall(function()
-        if not slua_GameFrontendHUD then return nil end
-        local pc = slua_GameFrontendHUD:GetPlayerController()
-        if not pc or not slua.isValid(pc) then return nil end
-        return pc:GetPlayerCharacterSafety()
-    end)
-    if ok and ch and slua.isValid(ch) then return ch end
-    return nil
-end
-
-local function IsSafeContext(ch)
-    local safe = true
-    pcall(function()
-        local veh = ch.CurrentVehicle
-        if veh and slua.isValid(veh) then safe = false end
-    end)
-    return safe
-end
-
-local function SaveOriginals(ch, cm)
-    if S.saved then return end
-    S.saved = true
-    local o = S.o
-    pcall(function() o.SpeedRate  = tonumber(cm.SpeedRate) or 1 end)
-    pcall(function() o.Scale      = tonumber(ch.SpeedScale) or 1 end)
-    pcall(function() o.Value      = tonumber(ch.SpeedValue) or 0 end)
-    pcall(function() o.Def        = tonumber(cm.DefaultMaxWalkSpeed) or 600 end)
-    pcall(function() o.Max        = tonumber(cm.MaxWalkSpeed) or 600 end)
-    pcall(function() o.Sprint     = tonumber(ch.MaxSprintSpeed) or 600 end)
-    pcall(function() o.High       = tonumber(ch.HighWalkSpeed) or o.Sprint end)
-    pcall(function() o.Crouch     = tonumber(ch.MaxCrouchSpeed) or 300 end)
-    pcall(function() o.Prone      = tonumber(ch.MaxProneSpeed) or 100 end)
-    pcall(function() o.SprintCr   = tonumber(ch.MaxSprintCrouchSpeed) or 400 end)
-    Log(string.format('orig: rate=%.2f scale=%.2f max=%.0f sprint=%.0f high=%.0f',
-        o.SpeedRate, o.Scale, o.Max, o.Sprint, o.High))
-end
-
-local function Enforce(ch, cm, m)
-    pcall(function() cm.SpeedRate          = S.o.SpeedRate * m end)
-    pcall(function() ch.SpeedScale         = S.o.Scale * m end)
-    pcall(function() ch.SpeedValue         = S.o.Value * m end)
-    pcall(function() cm.MaxWalkSpeed        = S.o.Max * m end)
-    pcall(function() cm.DefaultMaxWalkSpeed = S.o.Def * m end)
-    pcall(function() ch.MaxSprintSpeed      = S.o.Sprint * m end)
-    pcall(function() ch.HighWalkSpeed       = S.o.High * m end)
-    pcall(function() ch.MaxCrouchSpeed      = S.o.Crouch * m end)
-    pcall(function() ch.MaxProneSpeed       = S.o.Prone * m end)
-    pcall(function() ch.MaxSprintCrouchSpeed= S.o.SprintCr * m end)
-end
-
-function _G.R6gaming_Speed(mult)
-    mult = tonumber(mult) or 1.0
-    if mult > CFG.MaxSafe then mult = CFG.MaxSafe end
-    CFG.Multiplier = mult
-    PLog(string.format('[R6gaming] SPEED x%.1f', mult))
-end
-
-local function TickInner(dt)
-    if not _G.R6gaming_Enabled then return end
-    dt = math.min(tonumber(dt) or 0.033, 0.2)
-
-    local ch = GetMyChar()
-    if ch ~= S.char then
-        if S.char and slua.isValid(S.char) then
-            local okO, ocm = pcall(function()
-                return S.char.STCharacterMovement or S.char.CharacterMovement
-            end)
-            if okO and ocm and slua.isValid(ocm) then
-                pcall(function() ocm.SpeedRate = S.o.SpeedRate or 1 end)
-            end
-        end
-        S.char = ch
-        S.saved = false
-        S.curMult = 1.0
-    end
-    if not ch then return end
-
-    local cm = nil
-    pcall(function() cm = ch.STCharacterMovement or ch.CharacterMovement end)
-    if not cm or not slua.isValid(cm) then return end
-
-    SaveOriginals(ch, cm)
-
-    S.hbT = S.hbT + dt
-    if S.hbT >= 3 then
-        S.hbT = 0
-        pcall(function()
-            local v = ch:GetVelocity()
-            local spd = math.sqrt(v.X * v.X + v.Y * v.Y)
-            Log(string.format('[hb] rate=%.2f target=%.1f vel=%.0f',
-                tonumber(cm.SpeedRate) or -1, CFG.Multiplier, spd))
-        end)
-    end
-
-    -- AMBIL MULTIPLIER DARI LEXUS CONFIG
-    local speedMult = _G.LexusConfig.FastMovementSpeed or 10
-    if speedMult < 1 then speedMult = 1 end
-    if speedMult > 25 then speedMult = 25 end
-    CFG.Multiplier = speedMult
-
-    local targetMult = (_G.R6gaming_Enabled and _G.LexusConfig.FastMovement and IsSafeContext(ch))
-        and CFG.Multiplier or 1.0
-
-    if S.curMult < targetMult then
-        S.curMult = math.min(S.curMult + dt / CFG.RampTime, targetMult)
-    elseif S.curMult > targetMult then
-        S.curMult = math.max(S.curMult - dt / CFG.RampTime, targetMult)
-    end
-
-    Enforce(ch, cm, S.curMult)
-
-    if CFG.VelocityBoost > 1.01 then
-        pcall(function()
-            local v = cm.Velocity or ch:GetVelocity()
-            if not v then return end
-            local hs = math.sqrt(v.X * v.X + v.Y * v.Y)
-            if hs < 80 then return end
-            cm.Velocity = FVector(v.X * CFG.VelocityBoost,
-                v.Y * CFG.VelocityBoost, v.Z)
-        end)
-    end
-end
-
-local function Tick(dt)
-    local okT, err = pcall(TickInner, dt)
-    if not okT then Log('TICK ERROR: ' .. tostring(err), true) end
-end
-
-if TXtime_ticker then
-    _G.R6gaming_TimerIndex = TXtime_ticker.AddTimerLoop(0, Tick, -1, 0)
-    PLog('[R6gaming] Fast Movement loaded')
-else
-    PLog('[R6gaming] ERROR: time_ticker Not Found')
-end
-
-function _G.R6gaming_Unload()
-    _G.R6gaming_Enabled = false
-    local ch = S.char
-    if ch and slua.isValid(ch) then
-        pcall(function()
-            local cm = ch.STCharacterMovement or ch.CharacterMovement
-            if cm and slua.isValid(cm) then
-                cm.SpeedRate = S.o.SpeedRate or 1
-                cm.MaxWalkSpeed = S.o.Max or 600
-                cm.DefaultMaxWalkSpeed = S.o.Def or 600
-            end
-            ch.SpeedScale = S.o.Scale or 1
-            ch.MaxSprintSpeed = S.o.Sprint or 600
-        end)
-    end
-    if _G.R6gaming_TimerIndex and TXtime_ticker then
-        pcall(TXtime_ticker.RemoveTimer, _G.R6gaming_TimerIndex)
-    end
-    PLog('[R6gaming] unloaded')
-end
-
--- ============================================================
--- CEK STATUS DI MAINLOOP
--- ============================================================
--- TARUH KODE INI DI DALAM MainLoop()
--- ============================================================
--- 
---     -- FAST MOVEMENT CHECK
---     pcall(function()
---         if _G.LexusConfig.FastMovement then
---             if not _G.R6gaming_Enabled then
---                 _G.R6gaming_Enabled = true
---                 print("[R6gaming] Fast Movement ENABLED")
---             end
---         else
---             if _G.R6gaming_Enabled then
---                 _G.R6gaming_Enabled = false
---                 pcall(_G.R6gaming_Unload)
---                 print("[R6gaming] Fast Movement DISABLED")
---             end
---         end
---     end)
--- 
--- ============================================================
-
--- ============================================================
--- TAMBAHKAN KE LEXUS CONFIG (PASTIKAN SUDAH ADA)
--- ============================================================
--- _G.LexusConfig.FastMovement = false
--- _G.LexusConfig.FastMovementSpeed = 10
-
--- ============================================================
--- TAMBAHKAN KE STACK COMBAT
--- ============================================================
--- { Key = "ModMenu_FastMovement_Ex", UI = AliasMap.TitleSwitcher, Text = T("▶ GERAK CEPAT", "▶ FAST MOVEMENT"), ExpandIndex = 0, GetFunc = function() return _G.LexusConfig.FastMovement end, SetFunc = function(c,v) _G.LexusConfig.FastMovement = v return true end },
--- 
--- { Key = "ModMenu_FastMovement_Speed", UI = AliasMap.Slider, Text = T("   Kecepatan (1-25x)", "   Speed (1-25x)"), ExpandHandle = "ModMenu_FastMovement_Ex", MinValue = 1, MaxValue = 25, min = 1, max = 25, GetFunc = function() return _G.LexusConfig.FastMovementSpeed or 10 end, SetFunc = function(c,v) _G.LexusConfig.FastMovementSpeed = v return true end },
--- ============================================================
-
--- ============================================================================
--- END FAST MOVEMENT
--- ============================================================================
-
-local function __SetupAutoFeedback()
-local AutoFeedback = {
-	Config = {
-	
-		TestMode = false
-	},
-	Hooked = true
-}
-
-local function Log(message)
-	print(string.format("[ZULFINUX] [%s] %s", os.date("%H:%M:%S"), tostring(message)))
-end
-
-local function Notify(message)
-	if _G.FLUXMODNotify then
-		pcall(_G.ZFGNotify, message)
-	end
-end
-
-local function GetModule(name, allowRequire)
-	local loaded = package and package.loaded and package.loaded[name]
-	if loaded then
-		return loaded
-	end
-	if allowRequire == false then
-		return nil
-	end
-	local ok, module = pcall(require, name)
-	if ok then
-		return module
-	end
-	return nil
-end
-
-local function AddTimerOnce(delay, callback)
-	local ticker = GetModule("common.time_ticker")
-	if ticker and type(ticker.AddTimerOnce) == "function" then
-		ticker.AddTimerOnce(delay, callback)
-		return true
-	end
-	return false
-end
-
-local function Base64Encode(data)
-	if type(data) ~= "string" or #data == 0 then
-		return ""
-	end
-
-	local alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-	local output = {}
-	local outputIndex = 0
-	local index = 1
-
-	while index <= #data - 2 do
-		local a, b, c = string.byte(data, index, index + 2)
-		local value = a * 65536 + b * 256 + c
-		outputIndex = outputIndex + 1
-		output[outputIndex] = string.char(
-			string.byte(alphabet, math.floor(value / 262144) + 1),
-			string.byte(alphabet, math.floor(value / 4096) % 64 + 1),
-			string.byte(alphabet, math.floor(value / 64) % 64 + 1),
-			string.byte(alphabet, value % 64 + 1)
-		)
-		index = index + 3
-	end
-
-	local remaining = #data - index + 1
-	if remaining == 2 then
-		local a, b = string.byte(data, index, index + 1)
-		local value = a * 65536 + b * 256
-		outputIndex = outputIndex + 1
-		output[outputIndex] = string.char(
-			string.byte(alphabet, math.floor(value / 262144) + 1),
-			string.byte(alphabet, math.floor(value / 4096) % 64 + 1),
-			string.byte(alphabet, math.floor(value / 64) % 64 + 1),
-			string.byte("=")
-		)
-	elseif remaining == 1 then
-		local value = string.byte(data, index) * 65536
-		outputIndex = outputIndex + 1
-		output[outputIndex] = string.char(
-			string.byte(alphabet, math.floor(value / 262144) + 1),
-			string.byte(alphabet, math.floor(value / 4096) % 64 + 1),
-			string.byte("="),
-			string.byte("=")
-		)
-	end
-
-	return table.concat(output)
-end
-
-local function UrlEncode(value)
-	if value == nil then
-		return nil
-	end
-	value = tostring(value):gsub("\n", "\r\n")
-	value = value:gsub("([^A-Za-z0-9 %-%_%.%~])", function(character)
-		return string.format("%%%02X", string.byte(character))
-	end)
-	value = value:gsub(" ", "+")
-	return value
-end
-
-local function ReadFile(path)
-	local file = io.open(path, "rb")
-	if not file then
-		return ""
-	end
-	local data = file:read("*a") or ""
-	file:close()
-	return data
-end
-
-local function RemoveFile(path)
-	pcall(os.remove, path)
-end
-
-local function GetRankName(rank)
-	if rank < 1700 then
-		return "BRONZE"
-	elseif rank < 2200 then
-		return "SILVER"
-	elseif rank < 2700 then
-		return "GOLD"
-	elseif rank < 3200 then
-		return "PLATINUM"
-	elseif rank < 3700 then
-		return "DIAMOND"
-	elseif rank < 4200 then
-		return "CROWN"
-	elseif rank < 4700 then
-		return "ACE"
-	elseif rank < 5200 then
-		return "ACE MASTER"
-	elseif rank < 8000 then
-		return "ACE DOMINATOR"
-	end
-	return "CONQUEROR"
-end
-
-local E_CROWN = string.char(240,159,143,134) -- 🏆
-local E_FIRE  = string.char(240,159,148,165) -- 🔥
-local E_CLOCK = string.char(226,143,176)     -- ⏰
-local E_USER  = string.char(240,159,145,164) -- 👤
-local E_ID    = string.char(240,159,170,170) -- 🪪
-local E_GUN   = string.char(240,159,148,171) -- 🔫
-local E_MEDAL = string.char(240,159,143,133) -- 🏅
-local E_CHAT  = string.char(240,159,146,172) -- 💬
-local E_CHECK = string.char(226,156,133)     -- ✅
-
-local FeedbackCaptionTemplate =
-E_CROWN .. " <b>ZULFINUX</b> " .. E_CROWN .. "\n" ..
-"━━━━━━━━━━━━━━━━━━━━\n" ..
-E_FIRE .. " <b>AUTO FEEDBACK FREE</b>\n" ..
-"━━━━━━━━━━━━━━━━━━━━\n" ..
-E_CLOCK .. " <b>Time</b>   : %s\n" ..
-E_USER  .. " <b>Player</b> : %s\n" ..
-E_ID    .. " <b>UID</b>    : %s\n" ..
-E_GUN   .. " <b>Kills</b>  : %d\n" ..
-E_MEDAL .. " <b>Rank</b>   : %s\n" ..
-"━━━━━━━━━━━━━━━━━━━━\n" ..
-E_CHECK .. " <b>STATUS : FREE USER</b>\n" ..
-E_CHAT  .. " <b>ADMIN : @ZFG6969</b>\n" ..
-"━━━━━━━━━━━━━━━━━━━━\n" ..
-E_CROWN .. " <b>MAU FITUR LEBIH LENGKAP?</b> " .. E_CROWN .. "\n" ..
-E_FIRE .. " <b>YUK GABUNG VIP SEKARANG!</b>\n" ..
-"   Dapatkan akses VIP dengan fitur dan\n" ..
-"   dukungan yang lebih lengkap.\n" ..
-E_CHAT .. " <b>Hubungi Admin : @ZFG6969</b>\n" ..
-"━━━━━━━━━━━━━━━━━━━━"
-
-function AutoFeedback.SendFeedback(path, kills, rank, segment)
-	Log("Preparing to send feedback. Screenshot: " .. tostring(path))
-
-	local ok, err = pcall(function()
-		local httpManager = GetModule("client.slua.logic.http.http_manager")
-		if not httpManager or type(httpManager.Post) ~= "function" then
-			Log("HTTP manager is unavailable.")
-			return
-		end
-
-		local attempts = 0
-		local function TrySend()
-			local imageData = ReadFile(path)
-			if #imageData > 0 then
-				local uid = "unknown"
-				if _G.DataMgr and _G.DataMgr.roleData and _G.DataMgr.roleData.uid then
-					uid = tostring(_G.DataMgr.roleData.uid)
-				elseif _G._NTH_UK then
-					uid = tostring(_G._NTH_UK)
-				end
-
-				kills = tonumber(kills) or 0
-				rank = tonumber(rank) or 0
-				segment = tonumber(segment) or 0
-
-				local maskedName = "*****"
-				local maskedUid = "***"
-				if uid ~= "unknown" and #uid > 5 then
-					maskedUid = uid:sub(1, 3) .. "***" .. uid:sub(-2)
-				end
-
-				local caption = string.format(
-					FeedbackCaptionTemplate,
-					os.date("%H:%M:%S %d/%m/%Y"),
-					maskedName,
-					maskedUid,
-					kills,
-					GetRankName(rank)
-				)
-
-				local encodedImage = Base64Encode(imageData)
-				encodedImage = encodedImage:gsub("%+", "%%2B")
-				encodedImage = encodedImage:gsub("/", "%%2F")
-				encodedImage = encodedImage:gsub("=", "%%3D")
-
-				Notify("[ZULFINUX] Đang đẩy ảnh Top 1 về Server VIP...")
-				local body = "base64_image=" .. encodedImage
-					.. "&caption=" .. UrlEncode(caption)
-
-				h(
-					A.S
-					{["Content-Type"] = "application/x-www-form-urlencoded"},
-					body,
-					nil,
-					function(success, _, response, errorMessage)
-						if success and response and tostring(response):find('"status":%s*true') then
-							Notify("[ZULFINUX] Gửi thành công! (Kills: " .. tostring(kills) .. ")")
-						else
-							local detail = tostring(response or errorMessage):sub(1, 40)
-							Notify("[ZULFINUX] Lỗi Server VIP: " .. detail)
-						end
-						RemoveFile(path)
-					end,
-					60
-				)
-				return
-			end
-
-			attempts = attempts + 1
-			if attempts < 5 and AddTimerOnce(1.0, TrySend) then
-				return
-			end
-
-			Notify("[ZULFINUX] Chụp ảnh thất bại!!")
-			RemoveFile(path)
-		end
-
-		TrySend()
-	end)
-
-	if not ok then
-		Log("SendFeedback Error: " .. tostring(err))
-	end
-end
-
-local HudNames = {
-	"BattleChat_UIBP",
-	"Chat_UIBP",
-	"ChatMsg_UIBP",
-	"TeamAvatar_UIBP",
-	"Team_UIBP",
-	"VoiceChat_UIBP",
-	"MiniMap_UIBP",
-	"Bag_UIBP",
-	"PickUp_UIBP",
-	"PickUpList_UIBP",
-	"SystemChat_UIBP",
-	"InGameChat_UIBP",
-	"InGameChatPanel_UIBP",
-	"KillFeed_UIBP",
-	"Elimination_UIBP",
-	"ChatHUD_UIBP",
-	"ChatPanel_UIBP",
-	"MainHUD_UIBP",
-	"BattleHUD_UIBP"
-}
-
-local function GetRankAndSegment()
-	local rank = 0
-	local segment = 0
-
-	pcall(function()
-		local battleResult = _G.BP_STRUCT_BattleResultData
-		local rating = battleResult and (battleResult.rating or battleResult.BP_STRUCT_BTRating)
-		if rating then
-			rank = tonumber(rating.rank_rating) or 0
-			segment = tonumber(rating.new_segment) or 0
-		end
-
-		if rank == 0 then
-			local funcUtil = GetModule("common.func_util")
-			local roleData = _G.DataMgr and _G.DataMgr.roleData
-			if funcUtil and type(funcUtil.GetCurMaxSegementLevel) == "function"
-				and roleData and roleData.allzoneSegment then
-				segment = tonumber(funcUtil.GetCurMaxSegementLevel(roleData.allzoneSegment)) or 0
-			end
-
-			if roleData and roleData.segment_rating then
-				for _, value in pairs(roleData.segment_rating) do
-					if type(value) == "table" then
-						for _, nestedValue in pairs(value) do
-							if type(nestedValue) == "number" and nestedValue > rank then
-								rank = nestedValue
-							end
-						end
-					elseif type(value) == "number" and value > rank then
-						rank = value
-					end
-				end
-			end
-		end
-	end)
-
-	return rank, segment
-end
-
-local function CreateHudController()
-	local hidden = {}
-
-	local function SetHidden(hide)
-		local UIManager = _G.UIManager
-		if not UIManager then
-			return
-		end
-
-		if hide then
-			for _, name in ipairs(HudNames) do
-				local config
-				if UIManager.UI_Config_InGame and UIManager.UI_Config_InGame[name] then
-					config = UIManager.UI_Config_InGame[name]
-				elseif UIManager.UI_Config and UIManager.UI_Config[name] then
-					config = UIManager.UI_Config[name]
-				end
-
-				if config then
-					local view = type(UIManager.GetUI) == "function" and UIManager.GetUI(config) or nil
-					if view then
-						pcall(function()
-							if type(view.SetVisibility) == "function" then
-								view:SetVisibility(2)
-							elseif view.UIRoot and type(view.UIRoot.SetVisibility) == "function" then
-								view.UIRoot:SetVisibility(2)
-							elseif type(UIManager.HideUI) == "function" then
-								UIManager.HideUI(config)
-							elseif type(UIManager.CloseUI) == "function" then
-								UIManager.CloseUI(config)
-							end
-						end)
-						table.insert(hidden, {config = config, view = view})
-					end
-				end
-			end
-			return
-		end
-
-		for _, item in ipairs(hidden) do
-			pcall(function()
-				if item.view and type(item.view.SetVisibility) == "function" then
-					item.view:SetVisibility(0)
-				elseif item.view and item.view.UIRoot and type(item.view.UIRoot.SetVisibility) == "function" then
-					item.view.UIRoot:SetVisibility(0)
-				elseif type(UIManager.ShowUI) == "function" then
-					UIManager.ShowUI(item.config)
-				end
-			end)
-		end
-		hidden = {}
-	end
-
-	return SetHidden
-end
-
-local function GetScreenshotDirectory()
-	local directories = {}
-	local home = os.getenv("HOME")
-	if home and home ~= "" then
-		table.insert(directories, home .. "/Documents/ShadowTrackerExtra/Saved/")
-	end
-
-	local packages = {
-		"com.tencent.ig",
-		"com.vng.pubgmobile",
-		"com.pubg.krmobile",
-		"com.rekoo.pubgm",
-		"com.pubg.imobile"
-	}
-	for _, packageName in ipairs(packages) do
-		table.insert(
-			directories,
-			"/storage/emulated/0/Android/data/" .. packageName
-				.. "/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/"
-		)
-	end
-
-	local selected = directories[1]
-	for _, directory in ipairs(directories) do
-		local testPath = directory .. "t.tmp"
-		local file = io.open(testPath, "w")
-		if file then
-			file:close()
-			os.remove(testPath)
-			selected = directory
-			break
-		end
-	end
-	return selected
-end
-
-local function CaptureAndSend(kills, rank, segment, restoreHud)
-	local restored = false
-	local function RestoreHudOnce()
-		if not restored then
-			restored = true
-			restoreHud(false)
-		end
-	end
-
-	local ScreenshotMaker = import("ScreenshotMaker")
-	if not ScreenshotMaker then
-		RestoreHudOnce()
-		return
-	end
-
-	local directory = GetScreenshotDirectory()
-	if not directory then
-		RestoreHudOnce()
-		return
-	end
-
-	local path = directory .. string.format("nthwin_%s.jpg", os.time())
-	local uiUtil = GetModule("client.common.ui_util")
-	local gameInstance = uiUtil and uiUtil.GetGameInstance and uiUtil.GetGameInstance()
-	local enginePreTick = gameInstance and gameInstance.EnginePreTick
-	if not enginePreTick or type(enginePreTick.Add) ~= "function" then
-		RestoreHudOnce()
-		return
-	end
-
-	local ticker = GetModule("common.time_ticker")
-	if not ticker or type(ticker.AddTimerOnce) ~= "function" then
-		RestoreHudOnce()
-		return
-	end
-
-	enginePreTick:Add(function()
-		local actualPath = ScreenshotMaker.MakePictureByName(path, true)
-		if type(enginePreTick.Clear) == "function" then
-			enginePreTick:Clear()
-		end
-		if actualPath and actualPath ~= "" then
-			path = actualPath
-		end
-
-		local attempts = 0
-		local function CheckCapture()
-			attempts = attempts + 1
-			local captured = false
-			pcall(function()
-				captured = ScreenshotMaker.HasCaptured(path)
-			end)
-
-			if captured then
-				RestoreHudOnce()
-				Log("HasCaptured=true. Flushing to disk via ResizePicture...")
-				pcall(ScreenshotMaker.ResizePicture, path, 0.6, path)
-				ticker.AddTimerOnce(2.0, function()
-					if #ReadFile(path) > 0 then
-						AutoFeedback.SendFeedback(path, kills, rank, segment)
-					else
-						Notify("[ZULFINUX] Lỗi đọc ảnh iOS!")
-					end
-				end)
-			elseif attempts < 15 then
-				ticker.AddTimerOnce(1, CheckCapture)
-			else
-				RestoreHudOnce()
-				Notify("[ZULFINUX] Chụp ảnh thất bại!")
-			end
-		end
-
-		ticker.AddTimerOnce(1, CheckCapture)
-	end)
-end
-
-
-	kills = tonumber(kills) or 0
-	local rank, segment = GetRankAndSegment()
-
-	if rank < 2200 or kills <= 5 then
-		Log(string.format(
-			"Bỏ qua feedback: Rank %d, Kill %d (Yêu cầu Rank >= 2200 VÀ Kill > 5)",
-			rank,
-			kills
-		))
-		return
-	end
-
-	Notify("[ZULFINUX] Chúc mừng TUẤT đã TOP 1...")
-	local setHudHidden = CreateHudController()
-	setHudHidden(true)
-
-	local ok, err = pcall(CaptureAndSend, kills, rank, segment, setHudHidden)
-	if not ok then
-		setHudHidden(false)
-		Log("ProcessWin Error: " .. tostring(err))
-	end
-end
-
-local function GetWinnerKills()
-	local kills = 0
-	pcall(function()
-		local likeUtil = GetModule("GameLua.Mod.BaseMod.Client.Like.IngameLikeUtilClient")
-		if likeUtil and type(likeUtil.GetMyPlayerState) == "function" then
-			local playerState = likeUtil.GetMyPlayerState()
-			if playerState and playerState.Kills then
-				kills = tonumber(playerState.Kills) or 0
-			end
-		end
-
-		if kills == 0 then
-			local resultLogic = GetModule(
-				"GameLua.Mod.BaseMod.Client.BattleResult.BattleResultData.BattleResultDataLogic",
-				false
-			)
-			if resultLogic and type(resultLogic.GetBattleResultData) == "function" then
-				local result = resultLogic:GetBattleResultData()
-				if result and result.BP_mykill then
-					kills = tonumber(result.BP_mykill) or 0
-				end
-			end
-		end
-	end)
-	return kills
-end
-
-local function TryInstallHook()
-	pcall(function()
-		local UIManager = _G.UIManager
-		if not UIManager or not UIManager.ShowUI or UIManager.__FLUXMODHooked then
-			return
-		end
-
-		Log("Hooking UIManager.ShowUI for in-game Winner UI...")
-		local originalShowUI = UIManager.ShowUI
-		UIManager.ShowUI = function(config, params, ...)
-			local result = originalShowUI(config, params, ...)
-			pcall(function()
-				local inGameConfig = UIManager.UI_Config_InGame
-				local winnerConfig = inGameConfig and inGameConfig.GameOverCountDown_UIBP
-				local isWinner = params and (params.Reason == "win" or params.ShowedWinLogo)
-				if not winnerConfig or config ~= winnerConfig or not isWinner then
-					return
-				end
-
-				local kills = GetWinnerKills()
-				if not AddTimerOnce(2, function()
-					AutoFeedback.ProcessWin(kills)
-				end) then
-					AutoFeedback.ProcessWin(kills)
-				end
-			end)
-			return result
-		end
-
-		UIManager.__FLUXMODHooked = true
-		AutoFeedback.Hooked = true
-		Log("UIManager Hook installed successfully.")
-	end)
-end
-
-function AutoFeedback.Install()
-
-
-	if AutoFeedback.Config.TestMode then
-		pcall(function()
-			AddTimerOnce(5.0, function()
-				AutoFeedback.ProcessWin()
-			end)
-		end)
-	end
-
-	pcall(function()
-	
-
 -- ==============================================================================
 -- ================= KẾT THÚC CORE ADD-OUTFIT V7.5 (HỆ THỐNG SKIN) ==============
 -- ==============================================================================
@@ -20980,5 +18015,3 @@ return require("combine_class").DeclareFeature(CBRPlayerCharacterBase, {
     GeneralShowSpotFeature = "GameLua.Mod.BRMod.Gameplay.Feature.PlayerCharacterGeneralShowSpotFeature"
   }
 }, "BRPlayerCharacterBase")
-
-
