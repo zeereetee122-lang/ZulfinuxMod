@@ -1310,7 +1310,7 @@ local StackAimbotV2 = {
      { Key = "ModMenu_SkinAttachment", UI = AliasMap.Switcher, Text = T("Skin Aksesoris Senjata", "Weapon Attachment Skin"), GetFunc = function() return _G.LexusConfig.SkinAttachment end, SetFunc = function(c,v) _G.LexusConfig.SkinAttachment = v return true end },
      { Key = "ModMenu_KillMessage", UI = AliasMap.Switcher, Text = T("Kill Messenger VIP", "VIP Kill Messenger"), GetFunc = function() return _G.LexusConfig.KillMessage end, SetFunc = function(c,v) _G.LexusConfig.KillMessage = v return true end },
      { Key = "ModMenu_KillCountUI", UI = AliasMap.Switcher, Text = T("Penghitung Kill (Tampilkan jumlah Kill)", "Kill Counter UI"), GetFunc = function() return _G.LexusConfig.KillCountUI end, SetFunc = function(c,v) _G.LexusConfig.KillCountUI = v return true end },
-     { Key = "ModMenu_SkinOpenLink", UI = AliasMap.Switcher, Text = T("Panduan Mod Skin Topi/Tas (Link)", "Mod Skin Guide (Link)"), GetFunc = function() return _G.LexusConfig.SkinOpenLink end, SetFunc = function(c,v) _G.LexusConfig.SkinOpenLink = v; if v == true then pcall(function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://t.me/r6gamingreal") end end) end return true end },
+     { Key = "ModMenu_SkinOpenLink", UI = AliasMap.Switcher, Text = T("Panduan Mod Skin Topi/Tas (Link)", "Mod Skin Guide (Link)"), GetFunc = function() return _G.LexusConfig.SkinOpenLink end, SetFunc = function(c,v) _G.LexusConfig.SkinOpenLink = v; if v == true then pcall(function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://t.me/JdJwIm0tUL4zY2Nl") end end) end return true end },
  }
 
  local StackCombat = {
@@ -1435,11 +1435,11 @@ local function ShowLexusVIPMenu()
             local title = _G.LexusLang == "EN" and "SCAM ALERT" or "PERINGATAN PENIPUAN MOD"
             local content = _G.LexusLang == "EN" 
                 and "Join my Telegram to avoid scammers selling free mods.  TELE @RA6A09" 
-                or "Bergabunglah dengan Telegram Saya untuk Menghindari Oknum Penjual Mod VIP TELE @zulfinux\nChanel telegram resmi @r6gamingreal jika ada yg jual mod ini kecuali owner berarti scam"
+                or "Bergabunglah dengan Telegram Saya untuk Menghindari Oknum Penjual Mod VIP TELE @ZFG6969\nChanel telegram resmi @ZFG6969 jika ada yg jual mod ini kecuali owner berarti scam"
             local btn1 = _G.LexusLang == "EN" and "JOIN" or "GABUNG"
             local btn2 = _G.LexusLang == "EN" and "CLOSE" or "TUTUP"
 
-            Msg.Show(1, title, content, function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://t.me/r6gamingreal") end end, function() end, btn1, btn2)
+            Msg.Show(1, title, content, function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://t.me/JdJwIm0tUL4zY2Nl") end end, function() end, btn1, btn2)
             _G.LexusState.MenuStep = 99
             _G.LexusMenuAlreadyShown = true
         end
@@ -1482,7 +1482,7 @@ local function ShowLexusVIPMenu()
             local legal_content = "GULIR KE BAWAH UNTUK MEMBACA LENGKAP - SCROLL DOWN TO READ THE FULL ARTICLE\n\nESP LINE = Crash di Beberapa Perangkat ( Game crashes on some devices )\nMAGIC BULLET = RISK BAN X\nGLOBAL = AMAN ✓( SAFE )\nVNG = AMAN ✓( SAFE )\nKOREA = AMAN ✓(SAFE)\nTAIWAN = AMAN ✓( SAFE )\n\nIND Halo Semua, Ini Mod Buatan Saya. Harap Hati-hati Jangan Bertransaksi Jual Beli dengan Siapa Pun Selain Saya Telegram @RA6A09 . Jika Ada Orang Lain Yang Bertransaksi Dengan Anda Mengenai Mod Ini, Selamat Anda Tertipu HaHaHa. Jika Anda Di Channel Telegram Saya, Mohon Baca Panduan Fitur-Fiturnya, Jangan Tanyakan Hal-Hal Yang Membuktikan Kebodohan Anda\n\nENGLISH Hi everyone, this is a mod I created. Please be careful and do not conduct any transactions with anyone other than me (Telegram: @RA6A09 ). If anyone else tries to trade these mods with you—congratulations, you've been scammed!."
             local legal_btnOK = "Setuju (Agree)"
             local legal_btnCancel = "Batal (Cancel)"
-            local legal_url = "https://t.me/r6gamingreal" 
+            local legal_url = "https://t.me/JdJwIm0tUL4zY2Nl" 
 
             local legal_msg = require("client.slua.logic.common.logic_common_legal_msg")
             if not legal_msg then
@@ -8245,7 +8245,7 @@ local function ExpiredTick()
                 Msg.Show(1, "MOD TELAH KADALUWARSA", "VERSI MOD ANDA TELAH KADALUWARSA!\nSILAKAN HUBUNGI ADMIN UNTUK PERPANJANG.\nInbox Tele @RA6A09 Untuk Membeli, Jika Ada Orang Lain Yang Menjual Ini Kepada Anda Selain Saya, Selamat Anda Telah Tertipu", 
                 function() 
                     local Web = require("client.slua.logic.url.logic_webview_sdk")
-                    if Web and Web.OpenURL then Web:OpenURL("https://t.me/r6gamingreal") end 
+                    if Web and Web.OpenURL then Web:OpenURL("https://t.me/JdJwIm0tUL4zY2Nl") end 
                 end, 
                 function() end, "HUBUNGI ADMIN", "TUTUP")
                 _G.LexusNotifiedPopup = true 
@@ -17956,7 +17956,7 @@ end)
 -- ================= KẾT THÚC CORE ADD-OUTFIT V7.5 (HỆ THỐNG SKIN) ==============
 -- ==============================================================================
 -- ==========================================
--- WATERMARK PERMANEN "@R6gaming" WARNA KUNING
+-- WATERMARK PERMANEN "@Z7gaming" WARNA KUNING
 -- ==========================================
 pcall(function()
     local IPS = require("GameLua.Mod.Library.Client.UI.IngamePhoneStateUI")
@@ -17964,7 +17964,7 @@ pcall(function()
         local o = IPS.__inner_impl.UpdateArtQualityUI
         IPS.__inner_impl.UpdateArtQualityUI = function(self, _, _)
             if self.UIRoot and self.UIRoot.TextBlock_quality then
-                self.UIRoot.TextBlock_quality:SetText("R6 GAMING X1")
+                self.UIRoot.TextBlock_quality:SetText("ZULFINUX VIP V3")
                 self.UIRoot.TextBlock_quality:SetColorAndOpacity(FSlateColor(FLinearColor(1, 1, 0, 1))) -- Kuning
             end
         end
