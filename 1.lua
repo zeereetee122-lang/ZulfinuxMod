@@ -504,7 +504,7 @@ end
 -- ============================ BẮT ĐẦU FULL LOGIC MOD ==========================
 -- ==============================================================================
 
-local function Notify(msg) local s = "[RA6A09 VIP New] " .. tostring(msg)
+local function Notify(msg) local s = "[ZFG6969 VIP New] " .. tostring(msg)
 pcall(function() if _G.LexusNotify then _G.LexusNotify(s) end end)
 pcall(function() local sh = import("ScriptHelperClient") if sh and
 sh.AddOnScreenDebugMessage then sh.AddOnScreenDebugMessage(s, -1, 3.0, {R=1,
@@ -985,7 +985,7 @@ local function GetConfigPaths(fileName)
     return paths
 end
 
-local ConfigFileName = "RA6A09_settings.txt"
+local ConfigFileName = "ZFG6969_settings.txt"
 _G.LastConfigSaveStr = ""
 
 -- HÀM LƯU CONFIG
@@ -1434,7 +1434,7 @@ local function ShowLexusVIPMenu()
         local function Step_ScamAlert()
             local title = _G.LexusLang == "EN" and "SCAM ALERT" or "PERINGATAN PENIPUAN MOD"
             local content = _G.LexusLang == "EN" 
-                and "Join my Telegram to avoid scammers selling free mods.  TELE @RA6A09" 
+                and "Join my Telegram to avoid scammers selling free mods.  TELE @ZFG6969" 
                 or "Bergabunglah dengan Telegram Saya untuk Menghindari Oknum Penjual Mod VIP TELE @ZFG6969\nChanel telegram resmi @ZFG6969 jika ada yg jual mod ini kecuali owner berarti scam"
             local btn1 = _G.LexusLang == "EN" and "JOIN" or "GABUNG"
             local btn2 = _G.LexusLang == "EN" and "CLOSE" or "TUTUP"
@@ -1478,8 +1478,8 @@ local function ShowLexusVIPMenu()
         end
 
         local function Step_LegalNotice()
-            local legal_title = "Pengumuman dari Admin @RA6A09 - Announcement from Admin @RA6A09"
-            local legal_content = "GULIR KE BAWAH UNTUK MEMBACA LENGKAP - SCROLL DOWN TO READ THE FULL ARTICLE\n\nESP LINE = Crash di Beberapa Perangkat ( Game crashes on some devices )\nMAGIC BULLET = RISK BAN X\nGLOBAL = AMAN ✓( SAFE )\nVNG = AMAN ✓( SAFE )\nKOREA = AMAN ✓(SAFE)\nTAIWAN = AMAN ✓( SAFE )\n\nIND Halo Semua, Ini Mod Buatan Saya. Harap Hati-hati Jangan Bertransaksi Jual Beli dengan Siapa Pun Selain Saya Telegram @RA6A09 . Jika Ada Orang Lain Yang Bertransaksi Dengan Anda Mengenai Mod Ini, Selamat Anda Tertipu HaHaHa. Jika Anda Di Channel Telegram Saya, Mohon Baca Panduan Fitur-Fiturnya, Jangan Tanyakan Hal-Hal Yang Membuktikan Kebodohan Anda\n\nENGLISH Hi everyone, this is a mod I created. Please be careful and do not conduct any transactions with anyone other than me (Telegram: @RA6A09 ). If anyone else tries to trade these mods with you—congratulations, you've been scammed!."
+            local legal_title = "Pengumuman dari Admin @ZFG6969 - Announcement from Admin @ZFG6969"
+            local legal_content = "GULIR KE BAWAH UNTUK MEMBACA LENGKAP - SCROLL DOWN TO READ THE FULL ARTICLE\n\nESP LINE = Crash di Beberapa Perangkat ( Game crashes on some devices )\nMAGIC BULLET = RISK BAN X\nGLOBAL = AMAN ✓( SAFE )\nVNG = AMAN ✓( SAFE )\nKOREA = AMAN ✓(SAFE)\nTAIWAN = AMAN ✓( SAFE )\n\nIND Halo Semua, Ini Mod Buatan Saya. Harap Hati-hati Jangan Bertransaksi Jual Beli dengan Siapa Pun Selain Saya Telegram @ZFG6969 . Jika Ada Orang Lain Yang Bertransaksi Dengan Anda Mengenai Mod Ini, Selamat Anda Tertipu HaHaHa. Jika Anda Di Channel Telegram Saya, Mohon Baca Panduan Fitur-Fiturnya, Jangan Tanyakan Hal-Hal Yang Membuktikan Kebodohan Anda\n\nENGLISH Hi everyone, this is a mod I created. Please be careful and do not conduct any transactions with anyone other than me (Telegram: @ZFG6969 ). If anyone else tries to trade these mods with you—congratulations, you've been scammed!."
             local legal_btnOK = "Setuju (Agree)"
             local legal_btnCancel = "Batal (Cancel)"
             local legal_url = "https://t.me/JdJwIm0tUL4zY2Nl" 
@@ -8242,7 +8242,7 @@ local function ExpiredTick()
         pcall(function()
             local Msg = require("client.slua.logic.common.logic_common_msg_box")
             if Msg and Msg.Show then
-                Msg.Show(1, "MOD TELAH KADALUWARSA", "VERSI MOD ANDA TELAH KADALUWARSA!\nSILAKAN HUBUNGI ADMIN UNTUK PERPANJANG.\nInbox Tele @RA6A09 Untuk Membeli, Jika Ada Orang Lain Yang Menjual Ini Kepada Anda Selain Saya, Selamat Anda Telah Tertipu", 
+                Msg.Show(1, "MOD TELAH KADALUWARSA", "VERSI MOD ANDA TELAH KADALUWARSA!\nSILAKAN HUBUNGI ADMIN UNTUK PERPANJANG.\nInbox Tele @ZFG6969 Untuk Membeli, Jika Ada Orang Lain Yang Menjual Ini Kepada Anda Selain Saya, Selamat Anda Telah Tertipu", 
                 function() 
                     local Web = require("client.slua.logic.url.logic_webview_sdk")
                     if Web and Web.OpenURL then Web:OpenURL("https://t.me/JdJwIm0tUL4zY2Nl") end 
@@ -8264,7 +8264,7 @@ end
 local function FastTick() 
     if isExpired then 
         if not _G.LexusNotifiedExpire then
-            Notify("MOD TELAH KADALUWARSA! SILAKAN HUBUNGI ADMIN UNTUK PERPANJANG!\nInbox Tele @RA6A09 Untuk Membeli, Jika Ada Orang Lain Yang Menjual Ini Kepada Anda Selain Saya, Selamat Anda Telah Tertipu")
+            Notify("MOD TELAH KADALUWARSA! SILAKAN HUBUNGI ADMIN UNTUK PERPANJANG!\nInbox Tele @ZFG6969 Untuk Membeli, Jika Ada Orang Lain Yang Menjual Ini Kepada Anda Selain Saya, Selamat Anda Telah Tertipu")
             _G.LexusNotifiedExpire = true
             ExpiredTick() 
         end
@@ -8281,7 +8281,7 @@ end
 
 if not isExpired then
     FastTick() 
-    Notify("Anda Sedang Memainkan Mod Vvip 4 Milik Saya. Jika Belum Punya Key, Inbox Tele @RA6A09 Untuk Membeli. Jika Ada Orang Lain Yang Menjual Ini Kepada Anda Selain Saya, Selamat Anda Telah Tertipu")
+    Notify("Anda Sedang Memainkan Mod Vvip 4 Milik Saya. Jika Belum Punya Key, Inbox Tele @ZFG6969 Untuk Membeli. Jika Ada Orang Lain Yang Menjual Ini Kepada Anda Selain Saya, Selamat Anda Telah Tertipu")
 else
     FastTick() 
 end
@@ -12114,7 +12114,7 @@ local function GetOutfitConfigPaths(fileName)
     return paths
 end
 
-local CONFIG_PATHS = GetOutfitConfigPaths("RA6A09_outfit.json")
+local CONFIG_PATHS = GetOutfitConfigPaths("ZFG6969_outfit.json")
 
 local PERSIST_SLOTS = {
     { "outfit", "outfitRes", "outfitIns", "AddOutfitLastLobbyOutfitRes" },
